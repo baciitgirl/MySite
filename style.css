@@ -255,3 +255,133 @@ footer a:hover {
 .dokument-info li {
   margin-bottom: 0.5rem;
 }
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  display: none;
+  border-radius: 8px;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(65, 105, 225, 0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(90, 121, 227, 0.9);
+}
+
+
+.stadtbild {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  margin-top: 1rem;
+}
+
+
+.karte-einbettung {
+  margin-top: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+
+.bilder-karussell {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.fade {
+  animation: fade 0.8s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
