@@ -25,26 +25,3 @@ document.querySelectorAll(".nav-link").forEach(link => {
     html2pdf().set(options).from(element).save();
   }
 
-
-   const images = document.querySelectorAll('.carousel-images img');
-  const prevBtn = document.querySelector('.carousel-button.prev');
-  const nextBtn = document.querySelector('.carousel-button.next');
-  let current = 0;
-
-  function updateCarousel() {
-    images.forEach((img, index) => {
-      img.classList.toggle('active', index === current);
-    });
-  }
-
-  prevBtn.addEventListener('click', () => {
-    current = (current - 1 + images.length) % images.length;
-    updateCarousel();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    current = (current + 1) % images.length;
-    updateCarousel();
-  });
-
-  updateCarousel(); // Initial anzeigen

@@ -351,6 +351,7 @@ footer a:hover {
   display: block;
 }
 
+/*
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -377,6 +378,7 @@ footer a:hover {
   right: 10px;
 }
 
+*/
 .fade {
   animation: fade 0.8s;
 }

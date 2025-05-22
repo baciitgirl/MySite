@@ -34,6 +34,8 @@
       <a href="dokumente/enicnaric.pdf" class="pdf-button" target="_blank">📄 PDF öffnen</a>
     </section>
 
+
+   <!-- 
    <section class="dokument-vorschau">
   <h3>🖼️ Vorschau</h3>
   <div class="carousel">
@@ -46,7 +48,8 @@
     <button class="carousel-button next">&#10095;</button>
   </div>
 </section>
-
+*/
+-->
 
     <section class="dokument-preview">
       <h3>📑 PDF-Vorschau im Browser</h3>
@@ -61,5 +64,32 @@
       ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
     </p>
   </footer>
+
+<script>
+   const images = document.querySelectorAll('.carousel-images img');
+  const prevBtn = document.querySelector('.carousel-button.prev');
+  const nextBtn = document.querySelector('.carousel-button.next');
+  let current = 0;
+
+  function updateCarousel() {
+    images.forEach((img, index) => {
+      img.classList.toggle('active', index === current);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    current = (current - 1 + images.length) % images.length;
+    updateCarousel();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    current = (current + 1) % images.length;
+    updateCarousel();
+  });
+
+  updateCarousel(); // Initial anzeigen
+  </script>
+  
 </body>
+
 </html>
