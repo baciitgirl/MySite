@@ -62,5 +62,14 @@
       ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
     </p>
   </footer>
+<!-- 
+  <!-- Script zum Laden des Footers -->
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script> -->
 </body>
 </html>
