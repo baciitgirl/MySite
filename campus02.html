@@ -1,75 +1,83 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studium an der FH CAMPUS 02</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>FH CAMPUS 02 – Software Engineering & Management</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cv.html">Lebenslauf</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="unterlagen.html" class="nav-link active">Unterlagen</a>
-      <a href="kontakt.html">Kontakt</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studium an der FH CAMPUS 02</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>FH CAMPUS 02 – Software Engineering & Management</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cv.html">Lebenslauf</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="unterlagen.html" class="nav-link active">Unterlagen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </header>
 
-  <main class="dokument-seite">
-    <section class="dokument-info">
-      <h2>Dualer Studiengang: Software Engineering & Management</h2>
+    <main class="dokument-seite">
+      <section class="dokument-info">
+        <h2>Dualer Studiengang: Software Engineering & Management</h2>
+        <p>
+          Das duale Studium an der FH CAMPUS 02 verbindet theoretisches Wissen
+          mit praktischer Erfahrung im Unternehmen. Pro Semester wechseln sich
+          Theoriephasen an der Hochschule mit Praxisphasen im Betrieb ab.
+        </p>
+        <section class="studieninhalte">
+          <h3>Sommersemester (März – August) 2025</h3>
+          <ul>
+            <li>Webentwicklung (Grundlagen)</li>
+            <li>Datenbanken und SQL (MySQL)</li>
+            <li>Softwareprojekt (Teamarbeit: das Spiel "UNO")</li>
+            <li>Java Core</li>
+            <li>Java Intermediat</li>
+            <li>Java Advance</li>
+            <li>Datenbankenprogrammieren</li>
+            <li>Algorithmen und Datenstrukturen</li>
+            <li>
+              Softwareprojekt_Modelle (Teamarbeit) –
+              <a
+                href="dokumente/Präsentation_Modelle.pdf"
+                target="_blank"
+                class="modern-link"
+              >
+                📄 Präsentation anzeigen
+              </a>
+            </li>
+          </ul>
+
+          <h3>Wintersemester (Oktober – Jänner)</h3>
+          <ul>
+            <li>Interaktive Systeme</li>
+            <li>Web II</li>
+            <li>Programmiersprachen</li>
+            <li>Datenbankprogrammieren II</li>
+            <li>Software Design</li>
+          </ul>
+        </section>
+        <p>Weitere Inhalte und Vertiefungen folgen im Laufe des Studiums.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
       <p>
-        Das duale Studium an der FH CAMPUS 02 verbindet theoretisches Wissen mit praktischer Erfahrung im Unternehmen.
-        Pro Semester wechseln sich Theoriephasen an der Hochschule mit Praxisphasen im Betrieb ab.
+        📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
+        ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
       </p>
-
-      <h3>Wintersemester (Oktober – Jänner)</h3>
-      <ul>
-        <li>Grundlagen der Programmierung</li>
-        <li>Mathematik und Statistik</li>
-        <li>Wirtschaftliches Basiswissen</li>
-        <li>Software Engineering Methoden</li>
-      </ul>
-
-      <h3>Sommersemester (März – August) 2025</h3>
-      <ul>
-        <li>Webentwicklung (Grundlagen)</li>
-        <li>Datenbanken und SQL (MySQL)</li>
-        <li>Softwareprojekt (Teamarbeit: das Spiel "UNO")</li>
-        <li>Java Core</li>
-        <li>Java Intermediat</li>
-        <li>Java Advance</li>
-        <li>Datenbankenprogrammieren</li>
-        <li>Algorithmen und Datenstrukturen</li>
-        <li> Softwareprojekt_Modelle (Teamarbeit) –  <a href="dokumente/Präsentation_Modelle.pdf" target="_blank">📄  Präsentation anzeigen</a> </li>
-
-        <li>IT-Recht und Datenschutz</li>
-      </ul>
-
-      <p>
-        Weitere Inhalte und Vertiefungen folgen im Laufe des Studiums.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
-    <p>
-      📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br>
-      ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
-    </p>
-  </footer>
-<!-- 
+    </footer>
+    <!-- 
   <!-- Script zum Laden des Footers -->
-  <script>
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
-  </script> -->
-</body>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+    -->
+  </body>
 </html>

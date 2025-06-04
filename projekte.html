@@ -42,6 +42,14 @@
 </a>
     </p>
 
+    <section id="github">
+  <h2>Meine GitHub-Repositories</h2>
+  <p>Hier sind einige meiner öffentlichen Projekte:</p>
+  <ul id="repo-list">
+    <li>Lade Repositories…</li>
+  </ul>
+</section>
+
 
 
         <p>  💻 <a href="campus02.html" class="pdf-button">Mehr über mein Studium erfahren</a>  </p>
@@ -77,5 +85,28 @@
       ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
     </p>
   </footer>
+
+
+
+<script>
+const token = "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"; //mein token für publics git repos
+
+fetch("https://api.github.com/users/baciitgirl/repos", {
+  headers: {
+    Authorization: `token ${token}`
+  }
+})
+  .then(response => response.json())
+  .then(data => {
+    // wie gehabt ...
+  })
+  .catch(error => {
+    console.error("Fehler mit API:", error);
+  });
+
+</script>
+
+
+
 </body>
 </html>

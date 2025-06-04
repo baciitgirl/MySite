@@ -1,173 +1,266 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt – Anna Bacanau</title>
-  <link rel="stylesheet" href="style.css" />
-  <title>QR-Code Kontakt</title>
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2em;
-      background: #f5f5f5;
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt – Anna Bacanau</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>QR-Code Kontakt</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2em;
+        background: #f5f5f5;
+        text-align: center;
+      }
 
-    h1 {
-      margin-bottom: 1em;
-    }
+      h1 {
+        margin-bottom: 1em;
+      }
 
-    .qr-section {
-      margin: 2em 0;
-    }
+      .qr-section {
+        margin: 2em 0;
+      }
 
-    .qr-code {
-      display: inline-block;
-      padding: 1em;
-      background: white;
-      border-radius: 1em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Kontakt</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cv.html">Lebenslauf</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="unterlagen.html">Unterlagen</a>
-      <a href="kontakt.html" class="nav-link active">Kontakt</a>
-    </nav>
-  </header>
+      .qr-code {
+        display: inline-block;
+        padding: 1em;
+        background: white;
+        border-radius: 1em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Kontakt</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cv.html">Lebenslauf</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="unterlagen.html">Unterlagen</a>
+        <a href="kontakt.html" class="nav-link active">Kontakt</a>
+      </nav>
+    </header>
 
-  <main class="dokument-seite">
-    <section class="dokument-info">
-      <h2>Kontaktdaten</h2>
+    <main class="dokument-seite">
+      <section class="dokument-info">
+        <h2>Kontaktdaten</h2>
+        <p>
+          <strong>Anna Bacanau</strong><br />
+          Badgasse 9/1<br />
+          8130 Frohnleiten, Österreich<br />
+          📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
+          ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a
+          ><br />
+          💻
+          <a href="https://github.com/baciitgirl" target="_blank"
+            >github.com/baciitgirl</a
+          >
+        </p>
+      </section>
+      <h3>Kontaktiere mich per QR-Code</h3>
+
+      <div class="qr-section">
+        <h2>Email an Anna</h2>
+        <div id="emailQR" class="qr-code"></div>
+      </div>
+
+      <div class="qr-section">
+        <h2>Anruf an Anna</h2>
+        <div id="phoneQR" class="qr-code"></div>
+      </div>
+
+      <section class="kontaktformular">
+        <h2>📬 Schreib mir direkt</h2>
+        <!-- Datei-Upload erfordert enctype="multipart/form-data" -->
+        <form
+          action="mailto:anna.bacanau@gmail.com"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <fieldset>
+            <legend>Kontaktformular</legend>
+
+            <label for="name">Dein Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Deine E-Mail-Adresse:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="nachricht">Nachricht:</label>
+            <textarea
+              id="nachricht"
+              name="nachricht"
+              rows="5"
+              required
+            ></textarea>
+            <!-- 
+      <label for="datei">Datei anhängen (z. B. PDF, Bild):</label>
+      <input type="file" id="datei" name="datei" /> -->
+
+            <label for="datei">Datei anhängen:</label><br />
+            <div class="custom-file-upload">
+              <label class="upload-btn" for="datei">📎 Datei auswählen</label>
+              <span id="file-name">Keine Datei ausgewählt</span>
+              <input type="file" id="datei" name="datei" />
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="absenden-btn">Absenden</button>
+              <button type="reset" class="zuruecksetzen-btn">
+                Zurücksetzen
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="dokument-vorschau">
+        <h2>📍 Mein Standort: Frohnleiten</h2>
+        <p>Ein Blick auf meine schöne Heimatstadt(meine zweite Heimat):</p>
+        <img
+          src="pictures/frohnleiten_1.jpg"
+          alt="Frohnleiten Panorama"
+          class="stadtbild"
+        />
+      </section>
+
+      <!-- Abschnitt für das Bilder-Karussell -->
+      <section class="bilder-karussell">
+        <!-- Überschrift des Abschnitts -->
+        <h2>📸 Impressionen aus Frohnleiten</h2>
+
+        <!-- Container für die Bilder und Navigation -->
+        <div class="carousel-container">
+          <!-- Button für "zurück" (links) – zeigt vorheriges Bild -->
+          <button class="carousel-button prev" onclick="plusSlides(-1)">
+            ❮
+          </button>
+
+          <!-- Erstes Bild im Karussell, eingebettet in einen eigenen div -->
+          <div class="carousel-slide fade">
+            <img src="pictures/frohnleiten_2.jpg" alt="Frohnleiten 1" />
+          </div>
+
+          <!-- Zweites Bild -->
+          <div class="carousel-slide fade">
+            <img src="pictures/frohnleiten_3.jpg" alt="Frohnleiten 2" />
+          </div>
+
+          <!-- Drittes Bild -->
+          <div class="carousel-slide fade">
+            <img src="pictures/frohnleiten_4.jpg" alt="Frohnleiten 3" />
+          </div>
+
+          <!-- Button für "weiter" (rechts) – zeigt nächstes Bild -->
+          <button class="carousel-button next" onclick="plusSlides(1)">
+            ❯
+          </button>
+        </div>
+      </section>
+
+      <!-- Karte einbetten:
+Google Maps -> Suchen nach: Hauptplatz 3, 8130 Frohnleiten
+Klicken auf das „Teilen“-Symbol (kleine Büroklammer / Pfeil)
+Wählen den Reiter: „Karte einbetten“. Dort ist ein iframe, das so aussieht:
+<iframe
+  src="https://www.google.com/maps/embed?pb=......"
+  width="600" .....-->
+
+      <section class="dokument-vorschau">
+        <h2>📍 Standort: Hauptplatz 3, Frohnleiten</h2>
+        <div class="karte-einbettung">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.751403148684!2d15.333964615617668!3d47.27617057916192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e77e58c68b747%3A0x7a5c3f42000d4e29!2sHauptplatz%203%2C%208130%20Frohnleiten!5e0!3m2!1sde!2sat!4v1717227300000!5m2!1sde!2sat"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen=""
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Optional: Visitenkarte oder PDF-Kontakt -->
+      <!-- Wenn du eine PDF hochlädst z. B. visitenkarte.pdf -->
+      <section class="dokument-aktionen">
+        <a href="dokumente/kontaktinfo.pdf" class="pdf-button" target="_blank"
+          >📄 Kontakt-PDF herunterladen</a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
       <p>
-        <strong>Anna Bacanau</strong><br>
-        Badgasse 9/1<br>
-        8130 Frohnleiten, Österreich<br>
-        📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br>
-        ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a><br>
-        💻 <a href="https://github.com/baciitgirl" target="_blank">github.com/baciitgirl</a>
+        📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
+        ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
       </p>
-    </section>
-    <h3>Kontaktiere mich per QR-Code</h3>
+    </footer>
 
-  <div class="qr-section">
-    <h2>Email an Anna</h2>
-    <div id="emailQR" class="qr-code"></div>
-  </div>
+    <script>
+      // Startwert: Index des aktuell sichtbaren Bildes (beginnt bei 0)
+      let slideIndex = 0;
 
-  <div class="qr-section">
-    <h2>Anruf an Anna</h2>
-    <div id="phoneQR" class="qr-code"></div>
-  </div>
+      // Alle Elemente mit der Klasse "carousel-slide" (also die Bilder im Karussell) werden geholt
+      let slides = document.getElementsByClassName("carousel-slide");
 
-    <section class="dokument-vorschau">
-  <h2>📍 Mein Standort: Frohnleiten</h2>
-  <p>Ein Blick auf meine schöne Heimatstadt(meine zweite Heimat):</p>
-  <img src="pictures/frohnleiten.jpg" alt="Frohnleiten Panorama" class="stadtbild" />
-</section>
+      // Funktion zum Anzeigen eines Bildes und Ausblenden der anderen
+      function showSlides() {
+        // Zuerst alle Bilder ausblenden
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
 
-<section class="bilder-karussell">
-  <h2>📸 Impressionen aus Frohnleiten</h2>
-  <div class="carousel-container">
-    <button class="carousel-button prev" onclick="plusSlides(-1)">❮</button>
-    <div class="carousel-slide fade">
-      <img src="bilder/frohnleiten1.jpg" alt="Frohnleiten 1" />
-    </div>
-    <div class="carousel-slide fade">
-      <img src="bilder/frohnleiten2.jpg" alt="Frohnleiten 2" />
-    </div>
-    <div class="carousel-slide fade">
-      <img src="bilder/frohnleiten3.jpg" alt="Frohnleiten 3" />
-    </div>
-    <button class="carousel-button next" onclick="plusSlides(1)">❯</button>
-  </div>
-</section>
+        // Nächsten Index vorbereiten (geht zyklisch weiter)
+        slideIndex++;
 
+        // Wenn der Index größer ist als die Anzahl der Bilder, wieder bei 1 beginnen
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
 
+        // Aktuelles Bild (slideIndex - 1, da Array bei 0 beginnt) anzeigen
+        slides[slideIndex - 1].style.display = "block";
+      }
 
-<section class="dokument-vorschau">
-  <h2>📍 Karte: Frohnleiten in Google Maps</h2>
-  <div class="karte-einbettung">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.896202119027!2d15.331576315617486!3d47.27340897916152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e77efef9e5b17%3A0xf6c5e1cfa0fae10a!2sFrohnleiten!5e0!3m2!1sde!2sat!4v1716300000000!5m2!1sde!2sat"
-      width="100%"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</section>
+      // Funktion für den Benutzer, um manuell vor- oder zurückzublättern
+      function plusSlides(n) {
+        // n ist entweder +1 oder -1 (von den Pfeil-Buttons)
+        slideIndex += n - 1; // z. B. bei +1 ergibt das keine Erhöhung, da showSlides() selbst inkrementiert
+        showSlides(); // Danach wird das neue Bild angezeigt
+      }
 
+      // Starte die automatische Slideshow
+      showSlides();
+      setInterval(showSlides, 5000); // alle 5 Sekunden wechseln
 
-    <!-- Optional: Visitenkarte oder PDF-Kontakt -->
-    <!-- Wenn du eine PDF hochlädst z. B. visitenkarte.pdf -->
-    <section class="dokument-aktionen">
-      <a href="dokumente/kontaktinfo.pdf" class="pdf-button" target="_blank">📄 Kontakt-PDF herunterladen</a>
-    </section>
-  </main>
+      // E-Mail QR
+      new QRCode(document.getElementById("emailQR"), {
+        text: "mailto:anna.bacanau@gmail.com",
+        width: 150,
+        height: 150,
+      });
 
-  <footer>
-    <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
-    <p>
-      📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br>
-      ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
-    </p>
-  </footer>
+      // Telefon QR
+      new QRCode(document.getElementById("phoneQR"), {
+        text: "tel:+436801516688",
+        width: 150,
+        height: 150,
+      });
 
- <script>
-  let slideIndex = 0;
-  let slides = document.getElementsByClassName("carousel-slide");
+      // für Datei Upload
 
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].style.display = "block";
-  }
+      const fileInput = document.getElementById("datei");
+      const fileName = document.getElementById("file-name");
 
-  function plusSlides(n) {
-    slideIndex += n - 1;
-    showSlides();
-  }
-
-  // Starte die automatische Slideshow
-  showSlides();
-  setInterval(showSlides, 5000); // alle 5 Sekunden wechseln
-
- // E-Mail QR
-    new QRCode(document.getElementById("emailQR"), {
-      text: "mailto:anna.bacanau@gmail.com",
-      width: 150,
-      height: 150
-    });
-
-    // Telefon QR
-    new QRCode(document.getElementById("phoneQR"), {
-      text: "tel:+436801516688",
-      width: 150,
-      height: 150
-    });
-
-
-
-
-
-
-
-</script>
-
-
-</body>
+      fileInput.addEventListener("change", function () {
+        if (fileInput.files.length > 0) {
+          fileName.textContent = fileInput.files[0].name;
+        } else {
+          fileName.textContent = "Keine Datei ausgewählt";
+        }
+      });
+    </script>
+  </body>
 </html>
