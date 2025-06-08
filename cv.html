@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anna Bacanau – Lebenslauf</title>
     <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style_cv.css">
+
   </head>
   <body>
-    <header>
+    <!-- <header>
       <h1>Lebenslauf</h1>
       <nav>
         <a href="index.html" class="nav-link">Home</a>
@@ -16,7 +18,10 @@
         <a href="unterlagen.html" class="nav-link">Meine Unterlagen</a>
         <a href="kontakt.html" class="nav-link">Kontakt</a>
       </nav>
-    </header>
+    </header> -->
+
+    <!-- Header wird mit JS Funktion aufgeladen -->
+     <div id="header-placeholder"></div>
 
     <main id="lebenslauf-inhalt">
       <section
@@ -27,6 +32,8 @@
           margin-bottom: 2rem;
         "
       >
+        <!-- Beim Überfahren des Bildes mit der Maus (Hover-Effekt)  über das erste Bild wird ein zweites Bild eingeblendet -->
+
         <div style="flex-shrink: 0; text-align: left">
           <!-- <img src="anna.jpg" alt="Anna Bacanau" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #999;"> -->
           <div class="profilbild">
@@ -41,26 +48,6 @@
               class="hover"
             />
           </div>
-
-          <!-- 
-  Die folgenden Symbole 📧 📞 📍 sind sogenannte Unicode-Emojis.
-  Sie werden direkt als Textzeichen in HTML verwendet, ohne dass externe Bilder oder CSS-Dateien eingebunden werden müssen.
-
-  Verwendete Emojis:
-  📧 E-Mail-Symbol (Unicode: U+1F4E7)
-  📞 Telefonhörer (Unicode: U+1F4DE)
-  📍 Standort-Pin / Standortmarkierung (Unicode: U+1F4CD)
-
-  Vorteile:
-  – Plattformübergreifend unterstützt (Windows, macOS, Android, iOS)
-  – Kein zusätzlicher Aufwand für Icons oder Fonts (z. B. kein Font Awesome nötig)
-  – Einfache Einbindung: Direkt im HTML-Text verwendbar, z. B.
-      <p><strong>📧</strong> anna.bacanau@gmail.com</p>
-
-  Hinweise:
-  – Die Darstellung kann je nach System unterschiedlich aussehen (z. B. farbig oder monochrom)
-  – Wenn absolute visuelle Kontrolle benötigt wird, sollten SVG-Icons oder Icon-Fonts verwendet werden
--->
 
           <!-- <div style="margin-top: 1rem">
             <p><strong>📧</strong> anna.bacanau@gmail.com</p>
@@ -107,21 +94,37 @@
           </div>
         </div>
 
-        <div style="max-width: 600px; margin-left: 40px; margin-right: auto; text-align: justify; line-height: 1.6;">
-      <h2>Über mich</h2>
-<p>
-  Ich bin eine motivierte und zielorientierte Person mit starkem Engagement für Softwareentwicklung. 
-  Mein beruflicher Werdegang kombiniert fundierte betriebswirtschaftliche Erfahrung mit moderner IT-Kompetenz. 
-  Durch die erfolgreiche Umorientierung in die Softwareentwicklung bringe ich sowohl analytisches Denken als auch kreative Lösungsansätze in Projekte ein.
-</p>
-<p>
-  Mein besonderes Interesse gilt benutzerfreundlichen Anwendungen mit durchdachter Architektur, sei es im Backend oder in der Oberfläche – 
-  von WPF über Webentwicklung bis hin zu Testautomatisierung. Ich arbeite gern strukturiert, bin lernbereit und schätze Teamarbeit ebenso wie eigenverantwortliches Arbeiten.
-</p>
-<p>
-  Ich suche stets nach Möglichkeiten, mein Wissen zu erweitern, aktuelle Technologien anzuwenden und in einem innovativen Umfeld aktiv zur Qualität und Weiterentwicklung von Softwarelösungen beizutragen.
-</p>
-
+        <div
+          style="
+            max-width: 600px;
+            margin-left: 40px;
+            margin-right: auto;
+            text-align: justify;
+            line-height: 1.6;
+          "
+        >
+          <h2>Über mich</h2>
+          <p>
+            Ich bin eine motivierte und zielorientierte Person mit starkem
+            Engagement für Softwareentwicklung. Mein beruflicher Werdegang
+            kombiniert fundierte betriebswirtschaftliche Erfahrung mit moderner
+            IT-Kompetenz. Durch die erfolgreiche Umorientierung in die
+            Softwareentwicklung bringe ich sowohl analytisches Denken als auch
+            kreative Lösungsansätze in Projekte ein.
+          </p>
+          <p>
+            Mein besonderes Interesse gilt benutzerfreundlichen Anwendungen mit
+            durchdachter Architektur, sei es im Backend oder in der Oberfläche –
+            von WPF über Webentwicklung bis hin zu Testautomatisierung. Ich
+            arbeite gern strukturiert, bin lernbereit und schätze Teamarbeit
+            ebenso wie eigenverantwortliches Arbeiten.
+          </p>
+          <p>
+            Ich suche stets nach Möglichkeiten, mein Wissen zu erweitern,
+            aktuelle Technologien anzuwenden und in einem innovativen Umfeld
+            aktiv zur Qualität und Weiterentwicklung von Softwarelösungen
+            beizutragen.
+          </p>
         </div>
       </section>
 

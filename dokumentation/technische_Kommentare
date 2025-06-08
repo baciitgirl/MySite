@@ -1,0 +1,44 @@
+<!-- gilt für alle Seiten: header wird mit JS Funktion aufgeladen -->
+ //Header für alle Seiten 
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("header.html")
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("Netzwerkfehler: " + response.statusText);
+      }
+      return response.text();
+    })
+    .then(function (data) {
+      document.getElementById("header-placeholder").innerHTML = data;
+    })
+    .catch(function (error) {
+      console.error("Fehler beim Laden des Headers:", error);
+    });
+});
+
+
+
+<!-- Lebenslauf:cv.html -->
+
+<!-- 
+  Die folgenden Symbole 📧 📞 📍 sind sogenannte Unicode-Emojis.
+  Sie werden direkt als Textzeichen in HTML verwendet, ohne dass externe Bilder oder CSS-Dateien eingebunden werden müssen.
+
+  Verwendete Emojis:
+  📧 E-Mail-Symbol (Unicode: U+1F4E7)
+  📞 Telefonhörer (Unicode: U+1F4DE)
+  📍 Standort-Pin / Standortmarkierung (Unicode: U+1F4CD)
+
+  Vorteile:
+  – Plattformübergreifend unterstützt (Windows, macOS, Android, iOS)
+  – Kein zusätzlicher Aufwand für Icons oder Fonts (z. B. kein Font Awesome nötig)
+  – Einfache Einbindung: Direkt im HTML-Text verwendbar, z. B.
+      <p><strong>📧</strong> anna.bacanau@gmail.com</p>
+
+  Hinweise:
+  – Die Darstellung kann je nach System unterschiedlich aussehen (z. B. farbig oder monochrom)
+  – Wenn absolute visuelle Kontrolle benötigt wird, sollten SVG-Icons oder Icon-Fonts verwendet werden
+-->
+
+

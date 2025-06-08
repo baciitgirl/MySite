@@ -1,107 +1,129 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anna Bacanau – Software Developer</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Anna Bacanau</h1>
-    <nav>
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="cv.html" class="nav-link">Lebenslauf</a>
-      <a href="projekte.html" class="nav-link">Projekte</a>
-      <a href="unterlagen.html" class="nav-link">Meine Unterlagen</a>
-      <a href="kontakt.html" class="nav-link">Kontakt</a>
-
-
-    </nav>
-  </header>
-
-  <main>
-    <section class="profil">
-     <div class="profilbild">
-  <img src="pictures/foto_anna.jpg" alt="Anna Bacanau" class="normal" />
-  <img src="pictures/foto_anna_back.jpg" alt="Anna Bacanau beim Hover" class="hover" />
-  </div>
-      <div class="profiltext">
-        <h2>Über mich</h2>
-        <p>
-          Mein Name ist Anna Bacanau. Ich bin angehende Softwareentwicklerin mit einer betriebswirtschaftlichen Vergangenheit
-          und großer Leidenschaft für Technologie. Derzeit absolviere ich eine duale Ausbildung zur akademisch geprüften
-          Softwareentwicklerin an der FH Campus 02 in Graz.
-        </p>
-        <p>
-          Besonders motivieren mich anspruchsvolle Programmieraufgaben, bei denen wirtschaftliches Denken mit technischer
-          Umsetzung verbunden wird – z. B. in der Entwicklung von Lösungen mit C#, Java und SQL. Praktische Erfahrung habe
-          ich in der Desktopentwicklung mit .NET (WinForms, DevExpress), aber auch als Softwaretesterin und in ERP-Systemen.
-        </p>
-        <p>
-          Ich sehe Softwareentwicklung als kreativen, lernintensiven und zukunftsorientierten Beruf. Mein Ziel ist es, in einem
-          Team mit erfahrenen Kolleg:innen zu wachsen, digitale Produkte mitzugestalten und langfristig echten Mehrwert zu schaffen.
-        </p>
-      </div>
-    </section>
-
-        <section>
-      <h2>Meine Ziele als Entwicklerin</h2>
-      <p>
-        Ich bin bereit, mich als Programmiererin mit Fokus auf <strong>C#</strong> und <strong>Java</strong> weiterzuentwickeln – sowohl in der Desktop- als auch in der
-        <strong>mobilen Anwendungsentwicklung</strong>. Besonders interessiert mich auch das <strong>Testen von Software</strong>, da ich durch meine buchhalterische
-        Erfahrung sehr genau und strukturiert arbeite – das hilft mir, Fehler frühzeitig zu erkennen und Qualität zu sichern.
-      </p>
-      <p>
-        In Zukunft möchte ich auch tiefer in die Welt der <strong>ERP-Systeme</strong> eintauchen, insbesondere in der <strong>Programmierung und Anpassung von SAP</strong>
-        oder ähnlichen Systemen. Ich sehe Software nicht nur als Code, sondern als Werkzeug, das Prozesse verbessern und Menschen im Arbeitsalltag
-        unterstützen kann. Genau das motiviert mich jeden Tag.
-      </p>
-    </section>
-
-    <section>
-      <h2>Meine Motivation</h2>
-      <p>
-        Der Wechsel von der Buchhaltung zur IT war für mich ein bewusster Schritt – ich wollte nicht nur mit Zahlen arbeiten, sondern
-        mit Lösungen, die Menschen und Unternehmen voranbringen. In meiner früheren Tätigkeit als Bilanzbuchhalterin habe ich gelernt,
-        wie wichtig Klarheit, Genauigkeit und Prozesse sind – heute nutze ich dieses Wissen, um Software zu gestalten, die sinnvoll und
-        nutzerfreundlich ist.
-      </p>
-      <p>
-        Ich strebe nach einer beruflichen Umgebung, in der ich lernen, wachsen und mich weiterentwickeln kann. Ein Platz, an dem ich
-        gefordert werde – und durch meine Fähigkeiten zur gemeinsamen Entwicklung beitragen kann.
-      </p>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anna Bacanau – Software Developer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <header>
+      <h1>Anna Bacanau</h1>
     
-    </section>
-    <aside class="zitat">
-  <blockquote>
-    <p>„Code ist wie Humor. Wenn man ihn erklären muss, ist er schlecht.“ – Cory House</p>
-  </blockquote>
-</aside>
+      <nav>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="cv.html" class="nav-link">Lebenslauf</a>
+        <a href="projekte.html" class="nav-link">Projekte</a>
+        <a href="unterlagen.html" class="nav-link">Meine Unterlagen</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+    </header> -->
 
-<section class="dev-quote-box">
-  <h2>💡 Entwickler-Zitat des Tages</h2>
-  <blockquote id="dev-quote">
-    <p>Lade Zitat...</p>
-  </blockquote>
-</section>
+    <!-- Hier wird header geladen: -->
+    <div id="header-placeholder"></div> 
 
 
+   <!-- Beim Überfahren des Bildes mit der Maus (Hover-Effekt)  über das erste Bild wird ein zweites Bild eingeblendet -->
+    <main>
+      <section class="profil">
+        <div class="profilbild">
+          <img src="pictures/foto_anna.jpg" alt="Anna Bacanau" class="normal" />
+          <img
+            src="pictures/foto_anna_back.jpg"
+            alt="Anna Bacanau beim Hover"
+            class="hover"
+          />
+        </div>
+        <div class="profiltext">
+          <h2>Über mich</h2>
+          <p>
+            Mein Name ist Anna Bacanau. Ich bin angehende Softwareentwicklerin
+            mit einer betriebswirtschaftlichen Vergangenheit und großer
+            Leidenschaft für Technologie. Derzeit absolviere ich eine duale
+            Ausbildung zur akademisch geprüften Softwareentwicklerin an der FH
+            Campus 02 in Graz.
+          </p>
+          <p>
+            Besonders motivieren mich anspruchsvolle Programmieraufgaben, bei
+            denen wirtschaftliches Denken mit technischer Umsetzung verbunden
+            wird – z. B. in der Entwicklung von Lösungen mit C#, Java und SQL.
+            Praktische Erfahrung habe ich in der Desktopentwicklung mit .NET
+            (WinForms, DevExpress), aber auch als Softwaretesterin und in
+            ERP-Systemen.
+          </p>
+          <p>
+            Ich sehe Softwareentwicklung als kreativen, lernintensiven und
+            zukunftsorientierten Beruf. Mein Ziel ist es, in einem Team mit
+            erfahrenen Kolleg:innen zu wachsen, digitale Produkte mitzugestalten
+            und langfristig echten Mehrwert zu schaffen.
+          </p>
+        </div>
+      </section>
 
-  </main>
+      <section>
+        <h2>Meine Ziele als Entwicklerin</h2>
+        <p>
+          Ich bin bereit, mich als Programmiererin mit Fokus auf
+          <strong>C#</strong> und <strong>Java</strong> weiterzuentwickeln –
+          sowohl in der Desktop- als auch in der
+          <strong>mobilen Anwendungsentwicklung</strong>. Besonders interessiert
+          mich auch das <strong>Testen von Software</strong>, da ich durch meine
+          buchhalterische Erfahrung sehr genau und strukturiert arbeite – das
+          hilft mir, Fehler frühzeitig zu erkennen und Qualität zu sichern.
+        </p>
+        <p>
+          In Zukunft möchte ich auch tiefer in die Welt der
+          <strong>ERP-Systeme</strong> eintauchen, insbesondere in der
+          <strong>Programmierung und Anpassung von SAP</strong>
+          oder ähnlichen Systemen. Ich sehe Software nicht nur als Code, sondern
+          als Werkzeug, das Prozesse verbessern und Menschen im Arbeitsalltag
+          unterstützen kann. Genau das motiviert mich jeden Tag.
+        </p>
+      </section>
 
- <footer>
-  <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
-  <p>
-    📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br>
-    ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
-  </p>
-</footer>
+      <section>
+        <h2>Meine Motivation</h2>
+        <p>
+          Der Wechsel von der Buchhaltung zur IT war für mich ein bewusster
+          Schritt – ich wollte nicht nur mit Zahlen arbeiten, sondern mit
+          Lösungen, die Menschen und Unternehmen voranbringen. In meiner
+          früheren Tätigkeit als Bilanzbuchhalterin habe ich gelernt, wie
+          wichtig Klarheit, Genauigkeit und Prozesse sind – heute nutze ich
+          dieses Wissen, um Software zu gestalten, die sinnvoll und
+          nutzerfreundlich ist.
+        </p>
+        <p>
+          Ich strebe nach einer beruflichen Umgebung, in der ich lernen, wachsen
+          und mich weiterentwickeln kann. Ein Platz, an dem ich gefordert werde
+          – und durch meine Fähigkeiten zur gemeinsamen Entwicklung beitragen
+          kann.
+        </p>
+      </section>
+      <aside class="zitat">
+        <blockquote>
+          <p>
+            „Code ist wie Humor. Wenn man ihn erklären muss, ist er schlecht.“ –
+            Cory House
+          </p>
+        </blockquote>
+      </aside>
 
+      <section class="dev-quote-box">
+        <h2>💡 Entwickler-Zitat des Tages</h2>
+        <blockquote id="dev-quote">
+          <p>Lade Zitat...</p>
+        </blockquote>
+      </section>
+    </main>
 
-  <script src="script.js"></script>
-  
-</body>
+    <footer>
+      <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
+      <p>
+        📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
+        ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-

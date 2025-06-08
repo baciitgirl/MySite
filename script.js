@@ -4,11 +4,33 @@
 // Wird automatisch beim Laden der Seite ausgeführt.
 
 
+//Header für alle Seiten 
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("header.html")
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("Netzwerkfehler: " + response.statusText);
+      }
+      return response.text();
+    })
+    .then(function (data) {
+      document.getElementById("header-placeholder").innerHTML = data;
+    })
+    .catch(function (error) {
+      console.error("Fehler beim Laden des Headers:", error);
+    });
+});
+
+
+
+
+
 async function loadProgrammingQuote() {
   try {
-    console.log("Lade Entwickler-Zitat..."); //nur zum TEsten, weil in Browser auf local Host wird nicht geladen
+    console.log("Lade Entwickler-Zitat...");
 
-    const response = await fetch("https://programming-quotesapi.vercel.app/api/random");
+    const response = await fetch("https://programming-quotes-api.herokuapp.com/quotes/random");
     if (!response.ok) throw new Error("API-Antwort fehlgeschlagen");
 
     const data = await response.json();
@@ -16,7 +38,7 @@ async function loadProgrammingQuote() {
     const quoteElement = document.getElementById("dev-quote");
     if (quoteElement) {
       quoteElement.innerHTML = `
-        <p>${data.quote}</p>
+        <p>${data.en}</p>
         <cite>— ${data.author}</cite>
       `;
     }
@@ -29,7 +51,9 @@ async function loadProgrammingQuote() {
   }
 }
 
+
 window.addEventListener("DOMContentLoaded", loadProgrammingQuote);
+
 
 
 
@@ -48,6 +72,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
   }
 });
 
+//Funktion für die Generierung eines PDFs-Dokumnet
 
 //Wird ein PDF Dokument generiert
 

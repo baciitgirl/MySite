@@ -1,0 +1,29 @@
+
+
+/* Für die Kontaktzeile */
+
+h2 {
+  border-bottom: 2px solid #4169e1;
+  padding-bottom: 0.5rem;
+  color: #2c3e91;
+}
+
+/* Lebeslauf: Einträge */
+
+.resume-entry {
+  margin-bottom: 1.5rem;
+}
+
+.resume-entry a {
+  color: #4169e1;
+  text-decoration: none;
+}
+
+.resume-entry a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 2rem;
+}

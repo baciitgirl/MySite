@@ -95,9 +95,7 @@ main {
 }
 
 
-/* Für die Kontaktzeile */
-
-
+/* Für die Kontaktzeile
 
 h2 {
   border-bottom: 2px solid #4169e1;
@@ -105,7 +103,7 @@ h2 {
   color: #2c3e91;
 }
 
-/* Lebeslauf: Einträge */
+/* Lebeslauf: Einträge 
 
 .resume-entry {
   margin-bottom: 1.5rem;
@@ -123,7 +121,7 @@ h2 {
 ul {
   list-style: disc;
   margin-left: 2rem;
-}
+} */
 
 footer {
   text-align: center;
