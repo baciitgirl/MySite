@@ -1,23 +1,26 @@
 /* für die Seite campus02.html */
-.studieninhalte ul {
-  list-style: none;           /* Original-Bullets entfernen */
+/* Eigene Bullet-Liste nur für campus02.html */
+.campus02-liste {
+  list-style: none;
   padding-left: 0;
+  margin-left: 0;
 }
 
-.studieninhalte li {
+.campus02-liste li {
   position: relative;
   padding-left: 1.5em;
   margin-bottom: 0.5em;
 }
 
-.studieninhalte li::before {
-  content: "•";               /* Bullet-Symbol */
+.campus02-liste li::before {
+  content: "💡"; /* oder "•", "🛠️", "💡", etc. */
   position: absolute;
   left: 0;
-  color: #0366d6;             /* Deine Wunschfarbe */
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1;
+  color: #0366d6;
 }
+
 
 a.modern-link {
   text-decoration: none;

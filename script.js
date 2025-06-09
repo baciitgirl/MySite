@@ -67,11 +67,7 @@ async function loadProgrammingQuote() {
   }
 }
 
-
 window.addEventListener("DOMContentLoaded", loadProgrammingQuote);
-
-
-
 
 // Für den Navigations-Block
 // Hebt den aktuellen Navigationslink hervor, basierend auf dem Dateinamen in der URL.

@@ -7,12 +7,15 @@ body {
   color: #222;
 }
 
-header {
+header, h1 {
   background-color: #2c3e91; /* Dunkelblauer Hintergrund für den Header */
   color: white;              /* Weißer Text im Header */
   padding: 1rem 2rem;        /* Innenabstand: 1rem oben/unten, 2rem rechts/links */
   text-align: center;        /* Text wird zentriert innerhalb des Headers angezeigt */
+   margin-bottom: 0;
 }
+
+
 
 
 nav {
