@@ -1,0 +1,52 @@
+/* Seite "Projekte */
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #24292e;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+  background-color: #0366d6;
+}
+
+.stars {
+  font-size: 1.2em;
+  color: #333;
+}
+
+
+
+/* github Styles */
+#github {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: #f9f9f9;
+}
+
+#github ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#github li {
+  margin-bottom: 0.5rem;
+}
+
+#github a {
+  color: #0366d6;
+  text-decoration: none;
+}
+#github a:hover {
+  text-decoration: underline;
+}

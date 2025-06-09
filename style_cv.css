@@ -8,6 +8,29 @@ h2 {
   color: #2c3e91;
 }
 
+
+
+.kontakt-info {
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.kontakt-info a {
+  color: #333;
+  text-decoration: none;
+}
+
+.kontakt-info a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
 /* Lebeslauf: Einträge */
 
 .resume-entry {
@@ -26,4 +49,41 @@ h2 {
 ul {
   list-style: disc;
   margin-left: 2rem;
+}
+
+
+/* für Skills Bewertung auf cv.html */
+
+.skills-rating {
+  list-style: none;
+  padding-left: 0;
+  max-width: 300px;
+}
+
+.skills-rating li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.label {
+  width: 100px; /* feste Breite für Ausrichtung */
+  font-weight: 500;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 2px;
+}
+
+.star.filled {
+  background-color: #0366d6;
 }

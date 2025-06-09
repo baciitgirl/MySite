@@ -1,0 +1,355 @@
+
+/* Kontaktseite spezifisch*/
+
+body.kontakt {
+  font-family: Arial, sans-serif;
+  padding: 2em;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+body.kontakt h1 {
+  margin-bottom: 1em;
+}
+
+.qr-section {
+  margin: 2em 0;
+}
+
+.qr-code {
+  display: inline-block;
+  padding: 1em;
+  background: white;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Für die Sektion "Kontaktdaten" */
+/* === Kontaktkarte mit Barrierefreiheit === */
+/* ========================================
+   Kontaktkarte – modern, barrierefrei, responsiv
+   ======================================== */
+
+/* Hauptcontainer der Kontaktkarte */
+.kontakt-card {
+  width: 90%; /* Nimmt 90% der Bildschirmbreite ein */
+  max-width: 500px; /* Aber nie breiter als 500px */
+  margin: 2em auto; /* Vertikaler Abstand + zentriert */
+  padding: 1.5em; /* Innenabstand für Inhalt */
+  background-color: #ffffff; /* Weißer Hintergrund */
+  border-radius: 1em; /* Abgerundete Ecken */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+  font-family: 'Arial', sans-serif; /* Moderne, serifenlose Schrift */
+  line-height: 1.6; /* Lesbarer Zeilenabstand */
+  text-align: left; /* Text linksbündig */
+  box-sizing: border-box; /* Padding und Border zählen zur Gesamtbreite */
+}
+
+/* Überschrift in der Kontaktkarte */
+.kontakt-card h2 {
+  font-size: 1.6em; /* Größere Schrift für Titel */
+  margin-bottom: 1em; /* Abstand zum nächsten Element */
+  color: #333; /* Dunkles Grau für bessere Lesbarkeit */
+  text-align: center; /* Zentriert */
+}
+
+/* Kontaktinformationen im <address>-Tag */
+.kontakt-card address {
+  font-style: normal; /* Kein Kursiv (Standard bei <address>) */
+  font-size: 1em; /* Normale Textgröße */
+}
+
+/* Gestaltung der Links (Tel, Mail, GitHub) */
+.kontakt-card a {
+  color: #0077cc; /* Blau wie typische Links */
+  text-decoration: none; /* Kein Unterstrich standardmäßig */
+  word-break: break-word; /* Lange URLs können umgebrochen werden */
+}
+
+/* Link-Verhalten bei Hover (Maus drüber) */
+.kontakt-card a:hover {
+  text-decoration: underline; /* Unterstrich beim Hover für bessere UX */
+}
+
+/* Emoji-Icons vor den Links – etwas Abstand */
+.kontakt-card span[role="img"] {
+  margin-right: 0.4em; /* Platz zwischen Icon und Text */
+}
+
+/* ========================================
+   Responsive Design – für sehr kleine Displays
+   ======================================== */
+@media (max-width: 400px) {
+  .kontakt-card {
+    padding: 1em; /* Weniger Innenabstand auf kleinen Bildschirmen */
+    font-size: 0.95em; /* Etwas kleinere Schrift */
+  }
+
+  .kontakt-card h2 {
+    font-size: 1.4em; /* Titel verkleinern */
+  }
+}
+
+
+
+
+
+
+/* Kontaktformular */
+.kontaktformular {
+  background-color: #f9f9fc; /* sanftes Grau-Blau als Hintergrund */
+  padding: 2em;
+  margin-top: 2em;
+  border-radius: 1em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* weicher Schatten */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.kontaktformular input,
+.kontaktformular textarea {
+  width: 100%;
+  padding: 0.75em;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.6em;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease;
+}
+
+.kontaktformular input:focus,
+.kontaktformular textarea:focus {
+  border-color: #3e8ed0;
+  outline: none;
+}
+
+.kontaktformular label {
+  display: block;
+  margin-top: 0.5em;
+  font-weight: 600;
+  color: #333;
+}
+
+/* .kontaktformular .button-group {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+} */
+
+
+.kontaktformular .button-group {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+
+/* Allgemeine Button-Stile im Formular */
+.kontaktformular button {
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 2em;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Absenden (Grün) */
+.kontaktformular .absenden-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.kontaktformular .absenden-btn:hover {
+  background-color: #43a047;
+  transform: scale(1.02);
+}
+
+/* Zurücksetzen (Rot) */
+.kontaktformular .zuruecksetzen-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.kontaktformular .zuruecksetzen-btn:hover {
+  background-color: #e53935;
+  transform: scale(1.02);
+}
+
+
+/* Customize für Button "Datei auswählen" */
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.upload-btn {
+  background-color: #3e8ed0;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #336fa3;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none; /* versteckt den Original-Button */
+}
+
+#file-name {
+  font-style: italic;
+  color: #666;
+}
+
+
+
+/* Für Fotos (direkt)*/
+
+.stadtbild {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  margin-top: 1rem;
+}
+
+
+/* Karte  Styling*/
+
+.karte-einbettung {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Seitenverhältnis */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+
+.karte-einbettung iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Carousel-Galerie Frohnleiten*/
+
+/* .carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+} */
+.carousel-container {
+  position: relative; /* <-- wichtig für die absolute Positionierung der Buttons */
+  max-width: 800px;   /* oder je nach Bedarf */
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: none;
+  text-align: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  display: none;
+  border-radius: 8px;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+/* Schalterfläche für Bilder-Gallerie */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #2196f3, #1e88e5); /* Verlauf Blau → Dunkelblau */
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-button:hover {
+  /* background: linear-gradient(135deg, #42a5f5, #1976d2);  */
+  /* heller Verlauf beim Hover */
+  background-color: red;
+  transform: scale(1.1); /* leichtes Vergrößern beim Hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* mehr Schatten beim Hover */
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+
+/* Fade-Effekt für das sanfte Einblenden von Bildern */
+/* Die Klasse .fade kann einem Bild zugewiesen werden, um beim Wechsel eine weiche Überblendung zu erzielen */
+.fade {
+  animation: fade 0.8s; /* Führt die Animation 'fade' aus, Dauer: 0.8 Sekunden */
+}
+
+/* Definition der Keyframe-Animation 'fade' */
+/* Startet bei 40% Deckkraft und endet bei 100% (voll sichtbar) */
+@keyframes fade {
+  from { opacity: 0.4; }  /* Anfangszustand: halbtransparent */
+  to { opacity: 1; }      /* Endzustand: voll sichtbar */
+}
+
+/* Kontakte herunterladen */
+/* Abschnitt für PDF-Aktion (z. B. Download-Button)*/
+.dokument-aktionen {
+  margin-top: 2em; /* Abstand nach oben zur Karte */
+  text-align: center; /* Button mittig ausrichten */
+}

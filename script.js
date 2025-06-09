@@ -22,6 +22,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//footer für alle Seiten
+function loadFooter() {
+  const footer = document.createElement("footer");
+  footer.innerHTML = `
+    <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
+    <p>
+      📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
+      ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
+    </p>
+  `;
+  document.body.appendChild(footer);
+}
+
+document.addEventListener("DOMContentLoaded", loadFooter);
+
+
 
 
 
@@ -89,6 +105,93 @@ document.querySelectorAll(".nav-link").forEach(link => {
     html2pdf().set(options).from(element).save();
   }
 
+
+  //Für die Seite "Kontakt" 
+  //  // Startwert: Index des aktuell sichtbaren Bildes (beginnt bei 0)
+  //     let slideIndex = 0;
+
+  //     // Alle Elemente mit der Klasse "carousel-slide" (also die Bilder im Karussell) werden geholt
+  //     let slides = document.getElementsByClassName("carousel-slide");
+
+  //     // Funktion zum Anzeigen eines Bildes und Ausblenden der anderen
+  //     function showSlides() {
+  //       // Zuerst alle Bilder ausblenden
+  //       for (let i = 0; i < slides.length; i++) {
+  //         slides[i].style.display = "none";
+  //       }
+
+  //       // Nächsten Index vorbereiten (geht zyklisch weiter)
+  //       slideIndex++;
+
+  //       // Wenn der Index größer ist als die Anzahl der Bilder, wieder bei 1 beginnen
+  //       if (slideIndex > slides.length) {
+  //         slideIndex = 1;
+  //       }
+
+  //       // Aktuelles Bild (slideIndex - 1, da Array bei 0 beginnt) anzeigen
+  //       slides[slideIndex - 1].style.display = "block";
+  //     }
+
+  //     // Funktion für den Benutzer, um manuell vor- oder zurückzublättern
+  //     function plusSlides(n) {
+  //       // n ist entweder +1 oder -1 (von den Pfeil-Buttons)
+  //       slideIndex += n - 1; // z. B. bei +1 ergibt das keine Erhöhung, da showSlides() selbst inkrementiert
+  //       showSlides(); // Danach wird das neue Bild angezeigt
+  //     }
+
+  //     // Starte die automatische Slideshow
+  //     showSlides();
+  //     setInterval(showSlides, 5000); // alle 5 Sekunden wechseln
+
+
+
+//Slides Show aktualisiert:
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("carousel-slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+
+
+
+      // E-Mail QR
+      new QRCode(document.getElementById("emailQR"), {
+        text: "mailto:anna.bacanau@gmail.com",
+        width: 150,
+        height: 150,
+      });
+
+      // Telefon QR
+      new QRCode(document.getElementById("phoneQR"), {
+        text: "tel:+436801516688",
+        width: 150,
+        height: 150,
+      });
+
+      // für Datei Upload
+
+      const fileInput = document.getElementById("datei");
+      const fileName = document.getElementById("file-name");
+
+      fileInput.addEventListener("change", function () {
+        if (fileInput.files.length > 0) {
+          fileName.textContent = fileInput.files[0].name;
+        } else {
+          fileName.textContent = "Keine Datei ausgewählt";
+        }
+      });
 
 
 

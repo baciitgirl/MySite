@@ -1,57 +1,4 @@
-
-/* Anpassen an Smartphone Größe */
-
-@media (max-width: 600px) {
-  .profil {
-    flex-direction: column;
-    align-items: center;
-  }
-  .carousel-button {
-    font-size: 1rem;
-  }
-}
-
-/* für kleinere Bildschirme */
-
-@media (max-width: 768px) {
-  header, nav, main, footer {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .profil {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .label {
-    width: auto;
-    text-align: left;
-  }
-
-  .carousel-button {
-    font-size: 1.2rem;
-    padding: 0.3rem 0.5rem;
-  }
-
-  .bildreihe img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .dokument-bild img,
-  .dokument-vorschau img,
-  .stadtbild {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .kontaktformular {
-    padding: 1em;
-  }
-}
-
-/* Hauptstyle */
+/* BODY */
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -87,7 +34,6 @@ nav a.active {
   background-color: #5a79e3; /* Hellere Hintergrundfarbe beim Hover oder wenn der Link aktiv ist */
 }
 
-
 main {
   padding: 2rem;
   max-width: 1000px;
@@ -95,43 +41,8 @@ main {
 }
 
 
-/* Für die Kontaktzeile
 
-h2 {
-  border-bottom: 2px solid #4169e1;
-  padding-bottom: 0.5rem;
-  color: #2c3e91;
-}
-
-/* Lebeslauf: Einträge 
-
-.resume-entry {
-  margin-bottom: 1.5rem;
-}
-
-.resume-entry a {
-  color: #4169e1;
-  text-decoration: none;
-}
-
-.resume-entry a:hover {
-  text-decoration: underline;
-}
-
-ul {
-  list-style: disc;
-  margin-left: 2rem;
-} */
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #2c3e91;
-  color: white;
-  margin-top: 3rem;
-}
-
-/* Styles für Lebenslauf */
+/* Styles für Hauptfoto/index/Lebenslauf */
 
 .profil {
   display: flex;
@@ -141,54 +52,38 @@ footer {
   margin-bottom: 2rem;
 }
 
-.profilbild img {
+/* BILD */
+.profilbild {
+  position: relative;
   width: 200px;
   height: 200px;
-  object-fit: cover;
   border-radius: 50%;
+  overflow: hidden;
   border: 4px solid #4169e1;
 }
 
-/* cv.html: styles für Profil-Foto */
-
-.profilbild {
-  position: relative;
-  width: 200px; /* Größe nach Bedarf anpassen */
-  height: 200px;
-}
-/* Container für das Profilbild mit festgelegter Größe */
-.profilbild {
-  position: relative; /* Ermöglicht die absolute Positionierung der inneren Bilder */
-  width: 200px;        /* Breite des Profilbild-Containers */
-  height: 200px;       /* Höhe des Profilbild-Containers */
-}
-
-/* Gemeinsame Stile für beide Bilder (normal und hover) */
 .profilbild img {
-  position: absolute;  /* Bilder werden übereinander gelegt */
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;         /* Bild passt sich der Containergröße an */
+  width: 100%;
   height: 100%;
-  object-fit: cover;   /* Bild wird skaliert und beschnitten, um den Container auszufüllen */
-  transition: opacity 0.3s ease; /* Weicher Übergang bei Hover-Effekt */
+  object-fit: cover;
+  border-radius: 50%; /* sicherstellen, dass beide Bilder rund bleiben */
+  transition: opacity 0.3s ease;
 }
 
-/* Das Bild, das beim Hovern angezeigt wird, ist standardmäßig unsichtbar */
 .profilbild img.hover {
   opacity: 0;
 }
 
-/* Wenn die Maus über dem Container ist, wird das Hover-Bild sichtbar */
 .profilbild:hover img.hover {
   opacity: 1;
 }
 
-/* Gleichzeitig wird das normale Bild beim Hovern ausgeblendet */
 .profilbild:hover img.normal {
   opacity: 0;
 }
-
 
 
 .profiltext {
@@ -209,9 +104,7 @@ html, body {
 
 /* flex: 1; ist eine Kurzform von:
 
-flex-grow: 1;
-flex-shrink: 1;
-flex-basis: 0;
+flex-grow: 1; flex-shrink: 1;flex-basis: 0;
 Das sagt dem Browser:
 flex-grow: 1 → Das <main>-Element soll sich ausdehnen, um den verfügbaren Platz innerhalb des Flex-Containers zu füllen.
 flex-shrink: 1 → Es darf auch wieder kleiner werden, wenn nötig.
@@ -221,45 +114,11 @@ main {
   flex: 1;
 }
 
-/* für Skills Bewertung auf cv.html */
-
-.skills-rating {
-  list-style: none;
-  padding-left: 0;
-  max-width: 300px;
-}
-
-.skills-rating li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.label {
-  width: 100px; /* feste Breite für Ausrichtung */
-  font-weight: 500;
-}
-
-.stars {
-  display: flex;
-  gap: 4px;
-}
-
-.star {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
-  border-radius: 2px;
-}
-
-.star.filled {
-  background-color: #0366d6;
-}
 
 
 /* Style für pdf Buttons (Bsp. Lebenslauf) */
 
+/* Style für PDF-Buttons (z. B. Lebenslauf, Zeugnisse etc.) */
 .pdf-button {
   background-color: #4169e1;
   color: white;
@@ -268,85 +127,8 @@ main {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.3s ease;
-}
-
-.pdf-button:hover {
-  background-color: #5a79e3;
-}
-
-
-.dokument-bild {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.dokument-bild img {
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.dokument-links {
-  margin: 1rem 0;
-}
-
-.pdf-button {
-  background-color: #4169e1;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
   text-decoration: none;
-  font-size: 1rem;
   display: inline-block;
-}
-
-.pdf-button:hover {
-  background-color: #5a79e3;
-}
-
-.dokument-bild img {
-  max-width: 100%;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  margin-top: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-main.dokument-seite {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.dokument-info h2 {
-  color: #2c3e91;
-  margin-bottom: 0.5rem;
-}
-
-.dokument-info p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.dokument-aktionen {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.pdf-button {
-  background-color: #4169e1;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -354,40 +136,16 @@ main.dokument-seite {
   background-color: #5a79e3;
 }
 
-.dokument-vorschau {
+
+/* FOOTER */
+
+footer {
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #2c3e91;
+  color: white;
+  margin-top: 3rem;
 }
-
-.dokument-vorschau img {
-  max-width: 100%;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.dokument-preview {
-  margin-top: 2rem;
-}
-
-.bildreihe {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.bildreihe img {
-  width: 48%;
-  max-width: 400px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  object-fit: contain;
-}
-
-
 
 footer a {
   color: #ffffff;
@@ -409,140 +167,39 @@ footer a:hover {
   margin-bottom: 0.5rem;
 }
 
+/* 🔁 RESPONSIVE DESIGN */
 
-/* Kontaktformular */
-.kontaktformular {
-  background-color: #f9f9fc; /* sanftes Grau-Blau als Hintergrund */
-  padding: 2em;
-  margin-top: 2em;
-  border-radius: 1em;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* weicher Schatten */
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* Smartphones und Tablets */
+@media (max-width: 768px) {
+  header, nav, main, footer {
+    padding: 1rem;
+    text-align: center;
+  }
 
-.kontaktformular input,
-.kontaktformular textarea {
-  width: 100%;
-  padding: 0.75em;
-  margin-top: 0.3em;
-  margin-bottom: 1em;
-  border: 1px solid #ccc;
-  border-radius: 0.6em;
-  box-sizing: border-box;
-  font-size: 1em;
-  background-color: #fff;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
-  transition: border-color 0.3s ease;
-}
+  .profil {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.kontaktformular input:focus,
-.kontaktformular textarea:focus {
-  border-color: #3e8ed0;
-  outline: none;
-}
+  .label {
+    width: auto;
+    text-align: left;
+  }
 
-.kontaktformular label {
-  display: block;
-  margin-top: 0.5em;
-  font-weight: 600;
-  color: #333;
-}
+  .carousel-button {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+  }
 
-/* .kontaktformular .button-group {
-  display: flex;
-  gap: 1em;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-} */
+  .bildreihe img,
+  .dokument-bild img,
+  .dokument-vorschau img,
+  .stadtbild {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 
-
-.kontaktformular .button-group {
-  display: flex;
-  gap: 1em;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-top: 1em;
-}
-
-
-
-/* Customize für Button "Datei auswählen" */
-.custom-file-upload {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  flex-wrap: wrap;
-}
-
-.upload-btn {
-  background-color: #3e8ed0;
-  color: white;
-  padding: 0.5em 1em;
-  border-radius: 1em;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.upload-btn:hover {
-  background-color: #336fa3;
-}
-
-.custom-file-upload input[type="file"] {
-  display: none; /* versteckt den Original-Button */
-}
-
-#file-name {
-  font-style: italic;
-  color: #666;
-}
-
-
-
-
-/* Allgemeine Button-Stile im Formular */
-.kontaktformular button {
-  padding: 0.75em 1.5em;
-  border: none;
-  border-radius: 2em;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Absenden (Grün) */
-.kontaktformular .absenden-btn {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.kontaktformular .absenden-btn:hover {
-  background-color: #43a047;
-  transform: scale(1.02);
-}
-
-/* Zurücksetzen (Rot) */
-.kontaktformular .zuruecksetzen-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.kontaktformular .zuruecksetzen-btn:hover {
-  background-color: #e53935;
-  transform: scale(1.02);
-}
-
-
-
-
-
-/* 🔁 Media Query für kleine Bildschirme */
-@media (max-width: 600px) {
   .kontaktformular {
     padding: 1em;
   }
@@ -557,257 +214,7 @@ footer a:hover {
   }
 }
 
-
-/*  Galerie für Fotos (Frohnleiten) */
-
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 1rem auto;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-
-.carousel-images {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-images img {
-  width: 100%;
-  display: none;
-  border-radius: 8px;
-}
-
-.carousel-images img.active {
-  display: block;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(65, 105, 225, 0.8);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 4px;
-}
-
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
-}
-
-.carousel-button:hover {
-  background-color: rgba(90, 121, 227, 0.9);
-}
-
-/* Für Fotos (direkt)*/
-
-.stadtbild {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  box-shadow: 0 0 12px rgba(0,0,0,0.15);
-  margin-top: 1rem;
-}
-
-/* Karte  Styling*/
-
-/* .karte-einbettung {
-  margin-top: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
-} */
-
-
-.karte-einbettung {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Seitenverhältnis */
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  margin-top: 1rem;
-}
-
-.karte-einbettung iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 12px;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  padding: 0.3rem 0.6rem;
-  font-size: 1.5rem; /* Schriftgröße der Pfeile */
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-button:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
-}
-
-
-/*
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  z-index: 1;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.carousel-button:hover {
-  background-color: rgba(255,255,255,0.9);
-}
-
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
-}
-
-*/
-.fade {
-  animation: fade 0.8s;
-}
-
-@keyframes fade {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-
-/* Seite "Projekte */
-
-.github-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background-color: #24292e;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.github-button:hover {
-  background-color: #0366d6;
-}
-
-.stars {
-  font-size: 1.2em;
-  color: #333;
-}
-
-
-
-/* github Styles */
-#github {
-  margin-top: 2rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  background-color: #f9f9f9;
-}
-
-#github ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#github li {
-  margin-bottom: 0.5rem;
-}
-
-#github a {
-  color: #0366d6;
-  text-decoration: none;
-}
-#github a:hover {
-  text-decoration: underline;
-}
-
-/* für die Seite campus02.html */
-.studieninhalte ul {
-  list-style: none;           /* Original-Bullets entfernen */
-  padding-left: 0;
-}
-
-.studieninhalte li {
-  position: relative;
-  padding-left: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.studieninhalte li::before {
-  content: "•";               /* Bullet-Symbol */
-  position: absolute;
-  left: 0;
-  color: #0366d6;             /* Deine Wunschfarbe */
-  font-size: 1.2em;
-  line-height: 1;
-}
-
-a.modern-link {
-  text-decoration: none;
-  color: #0366d6;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  transition: color 0.3s ease;
-}
-
-a.modern-link:hover {
-  color: #024fa2;
-  text-decoration: underline; /* Optional: nur beim Hover */
-}
-
-
-/* Regel für Herunterladen von Dokumenten, zum Beispiel Lebenslauf */
+/* 📄 Druckansicht */
 @media print {
   body {
     font-size: 12pt;
@@ -834,10 +241,9 @@ a.modern-link:hover {
   }
 
   .pdf-button {
-    display: none; /* PDF-Button im PDF ausblenden */
+    display: none;
   }
 
-  /* Optional: Seitenumbruch vor bestimmten Abschnitten vermeiden */
   h2, h3, .section-title {
     page-break-after: avoid;
     page-break-inside: avoid;
@@ -847,48 +253,4 @@ a.modern-link:hover {
     page-break-inside: avoid;
   }
 }
-
-/* Extra Aufgabe: externe API: index.html */
-
-.dev-quote-box {
-  background-color: #f1f5f9;
-  padding: 1.5em;
-  margin: 2em auto;
-  border-left: 6px solid #3e8ed0;
-  border-radius: 1em;
-  max-width: 600px;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.dev-quote-box blockquote {
-  margin: 0;
-  font-style: italic;
-  color: #333;
-}
-
-.dev-quote-box blockquote p::before {
-  content: "“";
-  font-size: 2em;
-  vertical-align: top;
-  line-height: 0;
-  color: #3e8ed0;
-}
-
-.dev-quote-box blockquote p::after {
-  content: "”";
-  font-size: 2em;
-  vertical-align: bottom;
-  line-height: 0;
-  color: #3e8ed0;
-}
-
-.dev-quote-box cite {
-  display: block;
-  margin-top: 0.5em;
-  font-weight: bold;
-  color: #555;
-  text-align: right;
-}
-
 

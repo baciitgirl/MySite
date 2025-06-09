@@ -1,0 +1,35 @@
+/* für die Seite campus02.html */
+.studieninhalte ul {
+  list-style: none;           /* Original-Bullets entfernen */
+  padding-left: 0;
+}
+
+.studieninhalte li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.studieninhalte li::before {
+  content: "•";               /* Bullet-Symbol */
+  position: absolute;
+  left: 0;
+  color: #0366d6;             /* Deine Wunschfarbe */
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+a.modern-link {
+  text-decoration: none;
+  color: #0366d6;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  transition: color 0.3s ease;
+}
+
+a.modern-link:hover {
+  color: #024fa2;
+  text-decoration: underline; /* Optional: nur beim Hover */
+}
