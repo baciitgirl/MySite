@@ -9,8 +9,9 @@
     <title>QR-Code Kontakt</title>
   </head>
   <body class="kontakt">
-    <header>
-      <h1>Kontakt</h1>
+    <h1>Kontakt</h1>
+    <!-- <header>
+     
       <nav>
         <a href="index.html">Home</a>
         <a href="cv.html">Lebenslauf</a>
@@ -18,27 +19,40 @@
         <a href="unterlagen.html">Unterlagen</a>
         <a href="kontakt.html" class="nav-link active">Kontakt</a>
       </nav>
-    </header>
+    </header> -->
+
+    <!-- Hier wird header geladen: -->
+    <div id="header-placeholder"></div>
 
     <main class="dokument-seite">
       <section class="kontakt-card">
         <h2>Kontaktdaten</h2>
         <address>
           <p><strong>Anna Bacanau</strong></p>
-          <p>Badgasse 9/1<br>8130 Frohnleiten, Österreich</p>
+          <p>Badgasse 9/1<br />8130 Frohnleiten, Österreich</p>
           <p>
             <span role="img" aria-label="Telefon">📞</span>
-            <a href="tel:+436801516688" aria-label="Telefonnummer anrufen: +43 680 151 66 88">
-              +43 680 151 66 88
-            </a><br>
+            <a
+              href="tel:+436801516688"
+              aria-label="Telefonnummer anrufen: +43 680 151 66 88"
+            >
+              +43 680 151 66 88 </a
+            ><br />
 
             <span role="img" aria-label="E-Mail">✉️</span>
-            <a href="mailto:anna.bacanau@gmail.com" aria-label="E-Mail schreiben an anna.bacanau@gmail.com">
-              anna.bacanau@gmail.com
-            </a><br>
+            <a
+              href="mailto:anna.bacanau@gmail.com"
+              aria-label="E-Mail schreiben an anna.bacanau@gmail.com"
+            >
+              anna.bacanau@gmail.com </a
+            ><br />
 
             <span role="img" aria-label="GitHub Profil">💻</span>
-            <a href="https://github.com/baciitgirl" target="_blank" aria-label="GitHub Profil von Anna Bacanau">
+            <a
+              href="https://github.com/baciitgirl"
+              target="_blank"
+              aria-label="GitHub Profil von Anna Bacanau"
+            >
               github.com/baciitgirl
             </a>
           </p>
@@ -46,21 +60,28 @@
       </section>
 
       <h3>Kontaktiere mich per QR-Code</h3>
-      <div class="qr-section">
-        <h2>Email an Anna</h2>
-        <div id="emailQR" class="qr-code"></div>
-      </div>
 
-      <div class="qr-section">
-        <h2>Anruf an Anna</h2>
-        <div id="phoneQR" class="qr-code"></div>
+      <div class="qr-container">
+        <div class="qr-section">
+          <h2>Email an Anna</h2>
+          <div id="emailQR" class="qr-code"></div>
+        </div>
+
+        <div class="qr-section">
+          <h2>Anruf an Anna</h2>
+          <div id="phoneQR" class="qr-code"></div>
+        </div>
       </div>
 
       <section class="kontaktformular">
         <h2>📬 Schreib mir direkt</h2>
         <!-- Datei-Upload erfordert enctype="multipart/form-data" -->
         <!-- Daten mit der Methode POST senden -->
-        <form action="mailto:anna.bacanau@gmail.com" method="POST" enctype="multipart/form-data">
+        <form
+          action="mailto:anna.bacanau@gmail.com"
+          method="POST"
+          enctype="multipart/form-data"
+        >
           <!--Fieldset gruppiert zusammengehörige Formularfelder optisch und semantisch.
           Die Legende gibt dem Block eine beschreibende Überschrift, hier: "Kontaktformular". -->
           <fieldset>
@@ -73,7 +94,12 @@
             <input type="email" id="email" name="email" required />
 
             <label for="nachricht">Nachricht:</label>
-            <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+            <textarea
+              id="nachricht"
+              name="nachricht"
+              rows="5"
+              required
+            ></textarea>
             <!-- <label for="datei">Datei anhängen (z. B. PDF, Bild):</label> <input type="file" id="datei" name="datei" /> -->
             <label for="datei">Datei anhängen:</label><br />
             <div class="custom-file-upload">
@@ -95,37 +121,45 @@
       <section class="dokument-vorschau">
         <h2>📍 Mein Standort: Frohnleiten</h2>
         <p>Ein Blick auf meine schöne Heimatstadt(meine zweite Heimat):</p>
-        <img src="pictures/frohnleiten_1.jpg" alt="Frohnleiten Panorama" class="stadtbild"/>
+        <img
+          src="pictures/frohnleiten_1.jpg"
+          alt="Frohnleiten Panorama"
+          class="stadtbild"
+        />
       </section>
 
-     <!-- Abschnitt für das Bilder-Karussell -->
-<section class="bilder-karussell">
-  <h2>📸 Impressionen aus Frohnleiten</h2>
+      <!-- Abschnitt für das Bilder-Karussell -->
+      <section class="bilder-karussell">
+        <h2>📸 Impressionen aus Frohnleiten</h2>
 
-  <!-- Container für die Bilder und Navigation -->
-  <div class="carousel-container">
-    <!-- Button für "zurück" (links) – zeigt vorheriges Bild -->
-    <button class="carousel-button prev" onclick="plusSlides(-1)">&#10094;</button>
+        <!-- Container für die Bilder und Navigation -->
+        <div class="carousel-container">
+          <!-- Button für "zurück" (links) – zeigt vorheriges Bild -->
+          <button class="carousel-button prev" onclick="plusSlides(-1)">
+            &#10094;
+          </button>
 
-    <!-- Erstes Bild -->
-    <div class="carousel-slide fade">
-      <img src="pictures/frohnleiten_2.jpg" alt="Frohnleiten 1" />
-    </div>
+          <!-- Erstes Bild -->
+          <div class="carousel-slide fade">
+            <img src="pictures/frohnleiten_2.jpg" alt="Frohnleiten 1" />
+          </div>
 
-    <!-- Zweites Bild -->
-    <div class="carousel-slide fade">
-      <img src="pictures/frohnleiten_3.jpg" alt="Frohnleiten 2" />
-    </div>
+          <!-- Zweites Bild -->
+          <div class="carousel-slide fade">
+            <img src="pictures/frohnleiten_3.jpg" alt="Frohnleiten 2" />
+          </div>
 
-    <!-- Drittes Bild -->
-    <div class="carousel-slide fade">
-      <img src="pictures/frohnleiten_4.jpg" alt="Frohnleiten 3" />
-    </div>
+          <!-- Drittes Bild -->
+          <div class="carousel-slide fade">
+            <img src="pictures/frohnleiten_4.jpg" alt="Frohnleiten 3" />
+          </div>
 
-    <!-- Button für "weiter" (rechts) – zeigt nächstes Bild -->
-    <button class="carousel-button next" onclick="plusSlides(1)">&#10095;</button>
-  </div>
-</section>
+          <!-- Button für "weiter" (rechts) – zeigt nächstes Bild -->
+          <button class="carousel-button next" onclick="plusSlides(1)">
+            &#10095;
+          </button>
+        </div>
+      </section>
       <!-- Karte einbetten: Google Maps -> Suchen nach: Hauptplatz 3, 8130 Frohnleiten
 Klicken auf das „Teilen“-Symbol (kleine Büroklammer / Pfeil)
 Wählen den Reiter: „Karte einbetten“. Dort ist ein iframe, das so aussieht:
@@ -144,14 +178,19 @@ Wählen den Reiter: „Karte einbetten“. Dort ist ein iframe, das so aussieht:
         <div class="karte-einbettung">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.751403148684!2d15.333964615617668!3d47.27617057916192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e77e58c68b747%3A0x7a5c3f42000d4e29!2sHauptplatz%203%2C%208130%20Frohnleiten!5e0!3m2!1sde!2sat!4v1717227300000!5m2!1sde!2sat"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe>
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen=""
+          ></iframe>
         </div>
       </section>
 
       <!-- Optional: Visitenkarte oder PDF-Kontakt -->
       <!-- Wenn du eine PDF hochlädst z. B. visitenkarte.pdf -->
       <section class="dokument-aktionen">
-        <a href="dokumente/kontaktinfo.pdf" class="pdf-button" target="_blank">📄 Kontakt-PDF herunterladen</a>
+        <a href="dokumente/kontaktinfo.pdf" class="pdf-button" target="_blank"
+          >📄 Kontakt-PDF herunterladen</a
+        >
       </section>
     </main>
 

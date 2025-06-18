@@ -1,84 +1,123 @@
+/* Reset / Basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7fa;
+  color: #333;
+  padding: 1rem;
+}
 
-.dokument-bild {
-  margin-top: 2rem;
+/* Header & Navigation */
+header {
   text-align: center;
+  padding: 2rem 1rem;
+  background: #2c3e91;
+  color: #fff;
 }
 
-.dokument-bild img {
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+header h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
-.dokument-links {
-  margin: 1rem 0;
-}
-
-
-
-.dokument-bild img {
-  max-width: 100%;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  margin-top: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-main.dokument-seite {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.dokument-info h2 {
-  color: #2c3e91;
-  margin-bottom: 0.5rem;
-}
-
-.dokument-info p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.dokument-aktionen {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-
-
-.dokument-vorschau {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.dokument-vorschau img {
-  max-width: 100%;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.dokument-preview {
-  margin-top: 2rem;
-}
-
-.bildreihe {
+nav {
   display: flex;
-  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  gap: 1rem;
 }
 
-.bildreihe img {
-  width: 48%;
-  max-width: 400px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  object-fit: contain;
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hauptbereich */
+main.dokument-seite {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e91;
+  text-align: center;
+}
+
+/* Karten für Dokumente */
+.dokument-liste {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.dokument-karte {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.dokument-karte:hover {
+  transform: translateY(-5px);
+}
+
+.dokument-karte a {
+  color: #2c3e91;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dokument-karte a:hover {
+  text-decoration: underline;
+}
+
+.dokument-karte p {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  background-color: #2c3e91;
+  color: white;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Anpassung */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }

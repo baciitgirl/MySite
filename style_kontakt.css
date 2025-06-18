@@ -8,11 +8,12 @@ body.kontakt {
   text-align: center;
 }
 
-body.kontakt h1 {
+/* body.kontakt h1 {
   margin-bottom: 1em;
-}
+} */
 
-.qr-section {
+
+/* .qr-section {
   margin: 2em 0;
 }
 
@@ -22,7 +23,32 @@ body.kontakt h1 {
   background: white;
   border-radius: 1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.qr-container {
+  display: flex;
+  gap: 20px; /* Abstand zwischen den Blöcken */
+  justify-content: start; /* oder 'center' für zentrierte Darstellung */
+  flex-wrap: wrap; /* optional, damit es bei kleinen Bildschirmen umbrechen kann */
 }
+
+.qr-section {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px; /* oder eine andere feste Breite */
+  text-align: center;
+}
+
+.qr-code {
+  width: 150px;
+  height: 150px;
+  background-color: #f0f0f0; /* nur als Platzhalter für QR-Code */
+  margin: 10px auto 0;
+}
+
+
+
+
 
 /* Für die Sektion "Kontaktdaten" */
 /* === Kontaktkarte mit Barrierefreiheit === */

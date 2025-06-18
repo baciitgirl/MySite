@@ -40,14 +40,14 @@ document.addEventListener("DOMContentLoaded", loadFooter);
 
 
 
-
-
+//Datei:index.html Block:Entwickler Zitat des Tages
 async function loadProgrammingQuote() {
   try {
     console.log("Lade Entwickler-Zitat...");
 
-    const response = await fetch("https://programming-quotes-api.herokuapp.com/quotes/random");
-    if (!response.ok) throw new Error("API-Antwort fehlgeschlagen");
+    // ✅ Richtige URL verwenden!
+    const response = await fetch("https://programming-quotes-api.vercel.app/api/random");
+    if (!response.ok) throw new Error(`Fehler: ${response.status} ${response.statusText}`);
 
     const data = await response.json();
 
@@ -67,7 +67,10 @@ async function loadProgrammingQuote() {
   }
 }
 
+
+// Zitat laden, sobald die Seite vollständig geladen ist
 window.addEventListener("DOMContentLoaded", loadProgrammingQuote);
+
 
 // Für den Navigations-Block
 // Hebt den aktuellen Navigationslink hervor, basierend auf dem Dateinamen in der URL.
