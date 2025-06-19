@@ -60,7 +60,7 @@ h2 {
   text-align: center;
 }
 
-/* Karten für Dokumente */
+/* Karten (Kontainer) für Dokumente */
 .dokument-liste {
   display: grid;
   gap: 1.5rem;
@@ -79,6 +79,7 @@ h2 {
   transform: translateY(-5px);
 }
 
+/*Links Style*/
 .dokument-karte a {
   color: #2c3e91;
   font-weight: bold;
@@ -89,6 +90,7 @@ h2 {
   text-decoration: underline;
 }
 
+/* Style für einen Absatz*/
 .dokument-karte p {
   margin-top: 0.5rem;
   color: #555;

@@ -15,9 +15,7 @@ header, h1 {
    margin-bottom: 0;
 }
 
-
-
-
+/*Navigation Block*/
 nav {
   background-color: #1f2f6d; /* Dunkelblauer Hintergrund für die Navigationsleiste */
   display: flex;             /* Flexbox-Layout für horizontale Anordnung der Links */
@@ -76,6 +74,7 @@ main {
   transition: opacity 0.3s ease;
 }
 
+/*Wenn die Maus drauf fährt, werden die Fotos getauscht*/
 .profilbild img.hover {
   opacity: 0;
 }
@@ -92,6 +91,8 @@ main {
 .profiltext {
   flex: 1;
 }
+
+/*Main Styles */
 
 html, body {
   height: 100%;
@@ -118,8 +119,6 @@ main {
 }
 
 
-
-/* Style für pdf Buttons (Bsp. Lebenslauf) */
 
 /* Style für PDF-Buttons (z. B. Lebenslauf, Zeugnisse etc.) */
 .pdf-button {
@@ -150,14 +149,19 @@ footer {
   margin-top: 3rem;
 }
 
-footer a {
+/*Footer Link (nicht geklickt)*/
+/* footer a {
   color: #ffffff;
   text-decoration: underline;
 }
 
+/*Footer Link (geklickt) */
+
 footer a:hover {
   color: #aaccff;
-}
+} */
+
+/* TODO: das ist für die Seite "meine Unterlagen" */
 
 .dokument-info ul {
   list-style: none;
@@ -170,7 +174,7 @@ footer a:hover {
   margin-bottom: 0.5rem;
 }
 
-/* 🔁 RESPONSIVE DESIGN */
+/*RESPONSIVE DESIGN */
 
 /* Smartphones und Tablets */
 @media (max-width: 768px) {

@@ -1,11 +1,5 @@
-  // Code für die Zitate des Tages/exterene API (index.html)
-  // Lädt ein zufälliges Entwicklerzitat von der Programming Quotes API (vercel.app)
-// und zeigt es im <blockquote> mit der ID "dev-quote" an.
-// Wird automatisch beim Laden der Seite ausgeführt.
-
 
 //Header für alle Seiten 
-
 document.addEventListener("DOMContentLoaded", function () {
   fetch("header.html")
     .then(function (response) {
@@ -22,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//footer für alle Seiten
+//footer: für alle Seiten
 function loadFooter() {
   const footer = document.createElement("footer");
   footer.innerHTML = `
@@ -30,22 +24,23 @@ function loadFooter() {
     <p>
       📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
       ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
-    </p>
-  `;
+    </p>`;
   document.body.appendChild(footer);
 }
-
 document.addEventListener("DOMContentLoaded", loadFooter);
 
 
-
-
 //Datei:index.html Block:Entwickler Zitat des Tages
+  // Code für die Zitate des Tages/exterene API (index.html)
+  // Lädt ein zufälliges Entwicklerzitat von der Programming Quotes API (vercel.app)
+// und zeigt es im <blockquote> mit der ID "dev-quote" an.
+// Wird automatisch beim Laden der Seite ausgeführt.
+
 async function loadProgrammingQuote() {
   try {
     console.log("Lade Entwickler-Zitat...");
 
-    // ✅ Richtige URL verwenden!
+    //Richtige URL verwenden!
     const response = await fetch("https://programming-quotes-api.vercel.app/api/random");
     if (!response.ok) throw new Error(`Fehler: ${response.status} ${response.statusText}`);
 
@@ -55,8 +50,7 @@ async function loadProgrammingQuote() {
     if (quoteElement) {
       quoteElement.innerHTML = `
         <p>${data.en}</p>
-        <cite>— ${data.author}</cite>
-      `;
+        <cite>— ${data.author}</cite>`;
     }
   } catch (error) {
     console.error("Fehler beim Laden des Zitats:", error);
@@ -66,7 +60,6 @@ async function loadProgrammingQuote() {
     }
   }
 }
-
 
 // Zitat laden, sobald die Seite vollständig geladen ist
 window.addEventListener("DOMContentLoaded", loadProgrammingQuote);
@@ -87,22 +80,37 @@ document.querySelectorAll(".nav-link").forEach(link => {
   }
 });
 
-//Funktion für die Generierung eines PDFs-Dokumnet
+// Funktion zur Generierung eines PDF-Dokuments
+// Wird verwendet, um z. B. den Lebenslauf als PDF herunterladbar zu machen
 
-//Wird ein PDF Dokument generiert
+function generatePDF() {
+  // Holt das HTML-Element mit der ID 'lebenslauf-inhalt',
+  // das den Inhalt enthält, der als PDF gespeichert werden soll
+  const element = document.getElementById('lebenslauf-inhalt');
 
-  function generatePDF() {
-    const element = document.getElementById('lebenslauf-inhalt');
-    const options = {
-      margin: 0.5,
-      filename: 'lebenslauf-anna-bacanau.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, scrollY: 0 },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-    html2pdf().set(options).from(element).save();
-  }
+  // Konfigurationseinstellungen für die PDF-Erstellung
+  const options = {
+    margin: 0.5, // Seitenrand in Zoll
+    filename: 'lebenslauf-anna-bacanau.pdf', // Name der heruntergeladenen PDF-Datei
+    image: { type: 'jpeg', quality: 0.98 }, // Bildtyp und -qualität (für eingebettete Screenshots)
+    html2canvas: { 
+      scale: 2,     // Erhöht die Auflösung für bessere Druckqualität
+      scrollY: 0    // Verhindert Scroll-Verschiebung während des Renderns
+    },
+    jsPDF: {
+      unit: 'in',       // Maßeinheit: Zoll
+      format: 'a4',     // Papierformat: A4
+      orientation: 'portrait' // Hochformat
+    },
+    pagebreak: {
+      mode: ['avoid-all', 'css', 'legacy'] // Vermeidet Seitenumbrüche an ungünstigen Stellen
+    }
+  };
+
+  // html2pdf wird mit den Optionen konfiguriert,
+  // nimmt das HTML-Element und startet den PDF-Download
+  html2pdf().set(options).from(element).save();
+}
 
 
   //Für die Seite "Kontakt" 
@@ -163,27 +171,29 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
 }
 
+/* Kode für die Generierung
+der QR Kode */
+  // E-Mail QR generieren
+  new QRCode(document.getElementById("emailQR"), {
+    text: "mailto:anna.bacanau@gmail.com",
+    width: 150,
+    height: 150,
+  });
 
-
-      // E-Mail QR
-      new QRCode(document.getElementById("emailQR"), {
-        text: "mailto:anna.bacanau@gmail.com",
-        width: 150,
-        height: 150,
-      });
-
-      // Telefon QR
+      // Telefon QR generieren
       new QRCode(document.getElementById("phoneQR"), {
         text: "tel:+436801516688",
         width: 150,
         height: 150,
       });
 
-      // für Datei Upload
+      /* für Datei Upload(Kontakt Formular)
 
+      */
       const fileInput = document.getElementById("datei");
       const fileName = document.getElementById("file-name");
 
+      //Datei hinzufügen mit Prüfung, ob eine Datei überhauupt ausgewählt war
       fileInput.addEventListener("change", function () {
         if (fileInput.files.length > 0) {
           fileName.textContent = fileInput.files[0].name;
@@ -192,6 +202,19 @@ function showSlides(n) {
         }
       });
 
+      //Um sicher zu sein, dass wird nur PDF Datei hochgeladen
+      const file = fileInput.files[0];
+      if (file && file.type !== "application/pdf") {
+        alert("Nur PDF-Dateien erlaubt.");
+        return;
+      }
+
+      //Datei Größe kontrollieren
+      if (file.size > 5 * 1024 * 1024) { // 5 MB
+        alert("Die Datei ist zu groß.");
+      }
+
+   
 
 
 
