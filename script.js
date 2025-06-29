@@ -1,23 +1,23 @@
-
-//Header für alle Seiten 
+// ==========================
+// HEADER dynamisch laden
+// ==========================
 document.addEventListener("DOMContentLoaded", function () {
+  // Lädt den HTML-Inhalt aus "header.html" und fügt ihn in #header-placeholder ein
   fetch("header.html")
-    .then(function (response) {
+    .then(response => {
       if (!response.ok) {
         throw new Error("Netzwerkfehler: " + response.statusText);
       }
       return response.text();
     })
-    .then(function (data) {
+    .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
     })
-    .catch(function (error) {
+    .catch(error => {
       console.error("Fehler beim Laden des Headers:", error);
     });
-});
 
-//footer: für alle Seiten
-function loadFooter() {
+  // FOOTER generieren und anhängen
   const footer = document.createElement("footer");
   footer.innerHTML = `
     <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
@@ -26,195 +26,225 @@ function loadFooter() {
       ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
     </p>`;
   document.body.appendChild(footer);
-}
-document.addEventListener("DOMContentLoaded", loadFooter);
 
+  // Entwickler-Zitat laden
+  loadDeveloperQuote();
 
-//Datei:index.html Block:Entwickler Zitat des Tages
-  // Code für die Zitate des Tages/exterene API (index.html)
-  // Lädt ein zufälliges Entwicklerzitat von der Programming Quotes API (vercel.app)
-// und zeigt es im <blockquote> mit der ID "dev-quote" an.
-// Wird automatisch beim Laden der Seite ausgeführt.
+  // Navigation aktiv setzen
+  markActiveNavigation();
 
-async function loadProgrammingQuote() {
+  // Slideshow starten (wenn vorhanden)
+  initSlideShow();
+
+  // Datei-Upload vorbereiten (wenn vorhanden)
+  initFileUpload();
+
+  // QR-Codes generieren (wenn Elemente vorhanden sind)
+  generateQRCodes();
+});
+
+// ========================== FUNKTIONEN NACH DEM ZWECK:
+// API-ZITAT LADEN
+// ==========================
+/** 
+ * Lädt ein zufälliges, inspirierendes Zitat von ZenQuotes 
+ */
+/**
+ * Lädt ein Zitat aus der API-Ninjas Quote API
+ */
+// Entwickler-Zitat dynamisch laden (über corsproxy.io als CORS-Bypass)
+// Holt ein Zitat zum Thema "technology" über API-Ninjas (RapidAPI)
+async function loadDeveloperQuote() {
+  const quoteElement = document.getElementById("dev-quote");
   try {
-    console.log("Lade Entwickler-Zitat...");
+    const response = await fetch("https://api.quotable.io/random?tags=technology");
 
-    //Richtige URL verwenden!
-    const response = await fetch("https://programming-quotes-api.vercel.app/api/random");
-    if (!response.ok) throw new Error(`Fehler: ${response.status} ${response.statusText}`);
+    if (!response.ok) throw new Error(`Fehler: ${response.status}`);
 
     const data = await response.json();
 
-    const quoteElement = document.getElementById("dev-quote");
     if (quoteElement) {
       quoteElement.innerHTML = `
-        <p>${data.en}</p>
+        <p>"${data.content}"</p>
         <cite>— ${data.author}</cite>`;
     }
   } catch (error) {
-    console.error("Fehler beim Laden des Zitats:", error);
-    const quoteElement = document.getElementById("dev-quote");
+    console.error("Zitat-Laden fehlgeschlagen:", error);
     if (quoteElement) {
       quoteElement.innerHTML = "<p><em>Zitat konnte nicht geladen werden.</em></p>";
     }
   }
 }
 
-// Zitat laden, sobald die Seite vollständig geladen ist
-window.addEventListener("DOMContentLoaded", loadProgrammingQuote);
+document.addEventListener("DOMContentLoaded", loadDeveloperQuote);
 
 
-// Für den Navigations-Block
-// Hebt den aktuellen Navigationslink hervor, basierend auf dem Dateinamen in der URL.
-// Fügt der passenden <a>-Navigation die Klasse "active" hinzu und entfernt sie von allen anderen.
+//Alternative Lösung
 
-const currentPath = window.location.pathname.split("/").pop();
-const element = document.getElementById('lebenslauf-inhalt');
+const quotes = [
+  { content: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
+  { content: "Programs must be written for people to read.", author: "Harold Abelson" },
+  { content: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+];
 
-document.querySelectorAll(".nav-link").forEach(link => {
-  if (link.getAttribute("href") === currentPath) {
-    link.classList.add("active");
-  } else {
-    link.classList.remove("active");
-  }
+function loadDeveloperQuote() {
+  const quoteElement = document.getElementById("dev-quote");
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteElement.innerHTML = `<p>"${random.content}"</p><cite>— ${random.author}</cite>`;
+}
+
+document.addEventListener("DOMContentLoaded", loadDeveloperQuote);
+
+// ==========================
+// ZEIT IN WIEN
+// ==========================
+// Holt die aktuelle Zeit in Wien über einen Proxy von worldtimeapi.org
+document.addEventListener("DOMContentLoaded", () => {
+  loadWorldTime("Europe/Vienna", "vienna-time");
+  // Weitere Städte? Füge hier weitere Zeilen hinzu.
 });
 
-// Funktion zur Generierung eines PDF-Dokuments
-// Wird verwendet, um z. B. den Lebenslauf als PDF herunterladbar zu machen
+/**
+ * Holt aktuelle Zeit via World Time API und zeigt sie im Element an.
+ *
+ * @param {string} tz Timezone als IANA-String (z. B. "Europe/Vienna")
+ * @param {string} elemId ID des HTML-Elements für die Ausgabe
+ */
+async function loadWorldTime(tz, elemId) {
+  const el = document.getElementById(elemId);
+  if (!el) return;
 
-function generatePDF() {
-  // Holt das HTML-Element mit der ID 'lebenslauf-inhalt',
-  // das den Inhalt enthält, der als PDF gespeichert werden soll
-  const element = document.getElementById('lebenslauf-inhalt');
+  const url = `https://api.api-ninjas.com/v1/worldtime?timezone=${tz}`;
+  try {
+    const response = await fetch(url, {
+      headers: { 'X-Api-Key': 'nAB3Cr0QP9VLi6JIgX5juA==UERfDWr6xOf3fZvY' } //Mein API Key
+    });
+    if (!response.ok) throw new Error(`${response.status}: ${response.statusText}`);
 
-  // Konfigurationseinstellungen für die PDF-Erstellung
-  const options = {
-    margin: 0.5, // Seitenrand in Zoll
-    filename: 'lebenslauf-anna-bacanau.pdf', // Name der heruntergeladenen PDF-Datei
-    image: { type: 'jpeg', quality: 0.98 }, // Bildtyp und -qualität (für eingebettete Screenshots)
-    html2canvas: { 
-      scale: 2,     // Erhöht die Auflösung für bessere Druckqualität
-      scrollY: 0    // Verhindert Scroll-Verschiebung während des Renderns
-    },
-    jsPDF: {
-      unit: 'in',       // Maßeinheit: Zoll
-      format: 'a4',     // Papierformat: A4
-      orientation: 'portrait' // Hochformat
-    },
-    pagebreak: {
-      mode: ['avoid-all', 'css', 'legacy'] // Vermeidet Seitenumbrüche an ungünstigen Stellen
+    const data = await response.json();
+    // Beispielantwort enthält {datetime: "2025-06-20 17:45:12", date: "...", time: "...", timezone: ... }
+
+    el.textContent = `Zeit in ${tz.split('/')[1]}: ${data.datetime}`;
+  } catch (e) {
+    console.error("Fehler beim Laden der Zeit:", e);
+    el.textContent = "Zeit konnte nicht geladen werden.";
+  }
+}
+
+
+
+// ==========================
+// NAVIGATION: Aktiver Link markieren
+// ==========================
+function markActiveNavigation() {
+  const currentPath = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".nav-link").forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
     }
-  };
+  });
+}
 
-  // html2pdf wird mit den Optionen konfiguriert,
-  // nimmt das HTML-Element und startet den PDF-Download
+// ==========================
+// PDF GENERIERUNG (Lebenslauf)
+// ==========================
+function generatePDF() {
+  const element = document.getElementById('lebenslauf-inhalt');
+  const options = {
+    margin: 0.5,
+    filename: 'lebenslauf-anna-bacanau.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, scrollY: 0 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+  };
   html2pdf().set(options).from(element).save();
 }
 
+// ==========================
+// SLIDESHOW
+// ==========================
+function initSlideShow() {
+  let slideIndex = 1;
+  showSlides(slideIndex);
 
-  //Für die Seite "Kontakt" 
-  //  // Startwert: Index des aktuell sichtbaren Bildes (beginnt bei 0)
-  //     let slideIndex = 0;
+  window.plusSlides = function (n) {
+    showSlides(slideIndex += n);
+  };
 
-  //     // Alle Elemente mit der Klasse "carousel-slide" (also die Bilder im Karussell) werden geholt
-  //     let slides = document.getElementsByClassName("carousel-slide");
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("carousel-slide");
+    if (slides.length === 0) return;
 
-  //     // Funktion zum Anzeigen eines Bildes und Ausblenden der anderen
-  //     function showSlides() {
-  //       // Zuerst alle Bilder ausblenden
-  //       for (let i = 0; i < slides.length; i++) {
-  //         slides[i].style.display = "none";
-  //       }
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
 
-  //       // Nächsten Index vorbereiten (geht zyklisch weiter)
-  //       slideIndex++;
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
 
-  //       // Wenn der Index größer ist als die Anzahl der Bilder, wieder bei 1 beginnen
-  //       if (slideIndex > slides.length) {
-  //         slideIndex = 1;
-  //       }
-
-  //       // Aktuelles Bild (slideIndex - 1, da Array bei 0 beginnt) anzeigen
-  //       slides[slideIndex - 1].style.display = "block";
-  //     }
-
-  //     // Funktion für den Benutzer, um manuell vor- oder zurückzublättern
-  //     function plusSlides(n) {
-  //       // n ist entweder +1 oder -1 (von den Pfeil-Buttons)
-  //       slideIndex += n - 1; // z. B. bei +1 ergibt das keine Erhöhung, da showSlides() selbst inkrementiert
-  //       showSlides(); // Danach wird das neue Bild angezeigt
-  //     }
-
-  //     // Starte die automatische Slideshow
-  //     showSlides();
-  //     setInterval(showSlides, 5000); // alle 5 Sekunden wechseln
-
-
-
-//Slides Show aktualisiert:
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("carousel-slide");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[slideIndex - 1].style.display = "block";
   }
-  slides[slideIndex - 1].style.display = "block";
 }
 
-/* Kode für die Generierung
-der QR Kode */
-  // E-Mail QR generieren
-  new QRCode(document.getElementById("emailQR"), {
-    text: "mailto:anna.bacanau@gmail.com",
-    width: 150,
-    height: 150,
-  });
+// ==========================
+// DATEIUPLOAD (Kontaktformular)
+// ==========================
+function initFileUpload() {
+  const fileInput = document.getElementById("datei");
+  const fileName = document.getElementById("file-name");
 
-      // Telefon QR generieren
-      new QRCode(document.getElementById("phoneQR"), {
-        text: "tel:+436801516688",
-        width: 150,
-        height: 150,
-      });
+  if (!fileInput || !fileName) return;
 
-      /* für Datei Upload(Kontakt Formular)
-
-      */
-      const fileInput = document.getElementById("datei");
-      const fileName = document.getElementById("file-name");
-
-      //Datei hinzufügen mit Prüfung, ob eine Datei überhauupt ausgewählt war
-      fileInput.addEventListener("change", function () {
-        if (fileInput.files.length > 0) {
-          fileName.textContent = fileInput.files[0].name;
-        } else {
-          fileName.textContent = "Keine Datei ausgewählt";
-        }
-      });
-
-      //Um sicher zu sein, dass wird nur PDF Datei hochgeladen
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length > 0) {
       const file = fileInput.files[0];
-      if (file && file.type !== "application/pdf") {
+      fileName.textContent = file.name;
+
+      if (file.type !== "application/pdf") {
         alert("Nur PDF-Dateien erlaubt.");
+        fileInput.value = "";
+        fileName.textContent = "Keine gültige Datei";
         return;
       }
 
-      //Datei Größe kontrollieren
-      if (file.size > 5 * 1024 * 1024) { // 5 MB
+      if (file.size > 5 * 1024 * 1024) {
         alert("Die Datei ist zu groß.");
+        fileInput.value = "";
+        fileName.textContent = "Datei zu groß";
       }
+    } else {
+      fileName.textContent = "Keine Datei ausgewählt";
+    }
+  });
+}
 
-   
+// ==========================
+// QR-CODES GENERIEREN
+// ==========================
+function generateQRCodes() {
+  const emailQR = document.getElementById("emailQR");
+  const phoneQR = document.getElementById("phoneQR");
+
+  if (emailQR) {
+    new QRCode(emailQR, {
+      text: "mailto:anna.bacanau@gmail.com",
+      width: 150,
+      height: 150,
+    });
+  }
+
+  if (phoneQR) {
+    new QRCode(phoneQR, {
+      text: "tel:+436801516688",
+      width: 150,
+      height: 150,
+    });
+  }
+}
+
 
 
 

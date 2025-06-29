@@ -46,6 +46,21 @@ nav a.active {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+a.modern-link {
+  text-decoration: none;
+  color: #0366d6;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  transition: color 0.3s ease;
+}
+
+a.modern-link:hover {
+  color: #024fa2;
+  text-decoration: underline; /* Optional: nur beim Hover */
+}
+
 /* Hauptbereich */
 main.dokument-seite {
   max-width: 1000px;
@@ -97,7 +112,7 @@ h2 {
   font-size: 0.95rem;
 }
 
-/* Footer */
+/* Footer
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -114,7 +129,7 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Responsive Anpassung */
 @media (max-width: 600px) {
