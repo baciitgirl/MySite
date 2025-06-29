@@ -1,5 +1,9 @@
-/* für die Seite campus02.html */
-/* Eigene Bullet-Liste nur für campus02.html */
+/* 
+  Spezifische Gestaltung für die Seite "campus02.html".
+  Enthält u. a. eine eigene Bullet-List-Darstellung,
+  die ausschließlich auf dieser Seite verwendet wird.
+*/
+
 .campus02-liste {
   list-style: none;
   padding-left: 0;

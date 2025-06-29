@@ -1,4 +1,19 @@
-/* BODY */
+/* 
+  In dieser Datei (style.css) befinden sich allgemeine Gestaltungen, 
+  die für das gesamte Projekt gelten (z. B. Schriftarten, Farben, Layoutgrundlagen).
+  
+  Spezifische Bereiche wie Header, Footer oder Einzelseiten sind in eigenen Dateien ausgelagert:
+  - style_header.css
+  - style_footer.css
+  - style_cv.css
+  - style_kontakt.css
+  - usw.
+
+  Alle stilistischen CSS-Dateien befinden sich im Ordner "styles".
+*/
+
+
+/***** BODY******/
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -7,7 +22,7 @@ body {
   color: #222;
 }
 
-header, h1 {
+h1 {
   background-color: #2c3e91; /* Dunkelblauer Hintergrund für den Header */
   color: white;              /* Weißer Text im Header */
   padding: 1rem 2rem;        /* Innenabstand: 1rem oben/unten, 2rem rechts/links */
@@ -41,8 +56,6 @@ main {
   margin: auto;
 }
 
-
-
 /* Styles für Hauptfoto/index/Lebenslauf */
 
 .profil {
@@ -53,7 +66,7 @@ main {
   margin-bottom: 2rem;
 }
 
-/* BILD */
+/**** BILD *****/
 .profilbild {
   position: relative;
   width: 200px;
@@ -118,8 +131,6 @@ main {
   flex: 1;
 }
 
-
-
 /* Style für PDF-Buttons (z. B. Lebenslauf, Zeugnisse etc.) */
 .pdf-button {
   background-color: #4169e1;
@@ -136,30 +147,6 @@ main {
 
 .pdf-button:hover {
   background-color: #5a79e3;
-}
-
-
-
-/* TODO: das ist für die Seite "meine Unterlagen" */
-
-.dokument-info ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.dokument-info li {
-  margin-bottom: 0.5rem;
-}
-
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #f5f5f5;
-  color: #333;
-  margin-top: 2rem;
 }
 
 
@@ -210,43 +197,57 @@ footer {
   }
 }
 
-/* 📄 Druckansicht */
+/**********Druckansicht ************/
+
 @media print {
+  /* Kopfzeile, Navigation und Fußzeile im Druck ausblenden */
+  header, nav, footer {
+    display: none;
+  }
+
+  /* Grundlegende Schrift- und Seitenformatierung für den Druck */
   body {
-    font-size: 12pt;
-    line-height: 1.5;
+    font-size: 12pt;            /* Lesbare Schriftgröße für A4 */
+    line-height: 1.5;           /* Bessere Lesbarkeit im Text */
     margin: 0;
     padding: 0;
   }
 
+  /* Inhalt zentrieren und auf max. 800px begrenzen */
   #lebenslauf-inhalt {
     max-width: 800px;
     margin: 0 auto;
   }
 
+  /* Kontaktfoto runden, verkleinern und korrekt darstellen */
   .kontaktfoto {
-    width: 120px !important;
+    width: 120px !important;    /* Feste Breite fürs Drucklayout */
     height: auto;
-    object-fit: cover;
-    border-radius: 50%;
+    object-fit: cover;          /* Zuschneiden ohne Verzerren */
+    border-radius: 50%;         /* Rundes Bild */
   }
 
+  /* Bilder passen sich an den Seitenbereich an */
   img {
     max-width: 100%;
     height: auto;
   }
 
+  /* PDF-Export-Button wird im Druck nicht angezeigt */
   .pdf-button {
     display: none;
   }
 
+  /* Seitenumbrüche bei Überschriften vermeiden */
   h2, h3, .section-title {
     page-break-after: avoid;
     page-break-inside: avoid;
   }
 
+  /* Verhindert Seitenumbrüche innerhalb bestimmter Blöcke */
   .no-break {
     page-break-inside: avoid;
   }
 }
+
 

@@ -147,8 +147,37 @@ function markActiveNavigation() {
   });
 }
 
+
 // ==========================
-// PDF GENERIERUNG (Lebenslauf)
+// GIT  (proejkte.html)
+// ==========================
+
+ // Persönlicher GitHub-Token – wird nur für öffentliche Repos verwendet
+//const token = "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"; // 🔒 Hinweis: Niemals private Tokens öffentlich teilen!
+
+// Abruf der öffentlichen Repositories des Nutzers "baciitgirl" über die GitHub-API
+fetch("https://api.github.com/users/baciitgirl/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Fehler beim Abrufen: ${response.status} ${response.statusText}`);
+    }
+    return response.json(); // Antwort in JSON umwandeln
+  })
+  .then((data) => {
+    // Datenverarbeitung der erhaltenen Repos (z. B. anzeigen)
+    console.log("Public Repositories:", data);
+    // TODO: Darstellung im HTML
+  })
+  .catch((error) => {
+    // Fehlerbehandlung bei Netzwerk- oder API-Problemen
+    console.error("Fehler mit API:", error);
+  });
+
+
+   
+
+// ==========================
+// PDF GENERIERUNG (Lebenslauf/cv.html)
 // ==========================
 function generatePDF() {
   const element = document.getElementById('lebenslauf-inhalt');
@@ -245,6 +274,9 @@ function generateQRCodes() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  generateQRCodes(); //  QR-Codes generieren, sobald DOM geladen ist
+});
 
 
 

@@ -1,3 +1,16 @@
+/* 
+  Diese Datei (style_cv.css) enthält spezifische CSS-Regeln 
+  für die Gestaltung der Seite "cv.html" (Lebenslaufseite).
+
+  Hier werden z. B. das Layout des Lebenslaufs, 
+  Abschnitte für Berufserfahrung, Ausbildung, 
+  Fähigkeiten sowie das Foto- und Kontaktfeld gestylt.
+
+  Allgemeine Styles (z. B. Schrift, Grundfarben, Reset) 
+  befinden sich in der globalen Datei "style.css".
+
+  Alle CSS-Dateien sind zentral im Ordner "styles" gespeichert.
+*/
 
 
 /* Für die Kontaktzeile */
@@ -7,8 +20,6 @@ h2 {
   padding-bottom: 0.5rem;
   color: #2c3e91;
 }
-
-
 
 .kontakt-info {
   margin-top: 1rem;
@@ -25,10 +36,6 @@ h2 {
 .kontakt-info a:hover {
   text-decoration: underline;
 }
-
-
-
-
 
 
 /* Lebeslauf: Einträge */

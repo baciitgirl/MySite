@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt – Anna Bacanau</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style_kontakt.css" />
-    <link rel="stylesheet" href="style_footer.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style_kontakt.css" />
+    <link rel="stylesheet" href="styles/style_footer.css" />
+    <link rel="stylesheet" href="styles/style_header.css" />
   </head>
   <body class="kontakt">
     <h1>Kontakt</h1>
@@ -19,31 +20,15 @@
         <address>
           <p><strong>Anna Bacanau</strong></p>
           <p>Badgasse 9/1<br />8130 Frohnleiten, Österreich</p>
-          <p>
-            <span role="img" aria-label="Telefon">📞</span>
-            <a
-              href="tel:+436801516688"
-              aria-label="Telefonnummer anrufen: +43 680 151 66 88"
-            >
-              +43 680 151 66 88 </a
-            ><br />
+          <p><span role="img" aria-label="Telefon">📞</span>
+            <a href="tel:+436801516688"aria-label="Telefonnummer anrufen: +43 680 151 66 88">+43 680 151 66 88 </a ><br />
 
             <span role="img" aria-label="E-Mail">✉️</span>
-            <a
-              href="mailto:anna.bacanau@gmail.com"
-              aria-label="E-Mail schreiben an anna.bacanau@gmail.com"
-            >
-              anna.bacanau@gmail.com </a
-            ><br />
-
+            <a href="mailto:anna.bacanau@gmail.com" aria-label="E-Mail schreiben an anna.bacanau@gmail.com">
+              anna.bacanau@gmail.com </a><br />
             <span role="img" aria-label="GitHub Profil">💻</span>
-            <a
-              href="https://github.com/baciitgirl"
-              target="_blank"
-              aria-label="GitHub Profil von Anna Bacanau"
-            >
-              github.com/baciitgirl
-            </a>
+            <a href="https://github.com/baciitgirl" target="_blank"
+              aria-label="GitHub Profil von Anna Bacanau"> github.com/baciitgirl </a>
           </p>
         </address>
       </section>
@@ -66,11 +51,7 @@
         <h2>📬 Schreib mir direkt</h2>
         <!-- Datei-Upload erfordert enctype="multipart/form-data" -->
         <!-- Daten mit der Methode POST senden -->
-        <form
-          action="mailto:anna.bacanau@gmail.com"
-          method="POST"
-          enctype="multipart/form-data"
-        >
+        <form  action="mailto:anna.bacanau@gmail.com" method="POST" enctype="multipart/form-data">
           <!--Fieldset gruppiert zusammengehörige Formularfelder optisch und semantisch.
           Die Legende gibt dem Block eine beschreibende Überschrift, hier: "Kontaktformular". -->
           <fieldset>
@@ -83,12 +64,7 @@
             <input type="email" id="email" name="email" required />
 
             <label for="nachricht">Nachricht:</label>
-            <textarea
-              id="nachricht"
-              name="nachricht"
-              rows="5"
-              required
-            ></textarea>
+            <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
             <!-- <label for="datei">Datei anhängen (z. B. PDF, Bild):</label> <input type="file" id="datei" name="datei" /> -->
             <label for="datei">Datei anhängen:</label><br />
             <div class="custom-file-upload">
@@ -99,9 +75,7 @@
 
             <div class="button-group">
               <button type="submit" class="absenden-btn">Absenden</button>
-              <button type="reset" class="zuruecksetzen-btn">
-                Zurücksetzen
-              </button>
+              <button type="reset" class="zuruecksetzen-btn"> Zurücksetzen</button>
             </div>
           </fieldset>
         </form>
@@ -110,11 +84,7 @@
       <section class="dokument-vorschau">
         <h2>📍 Mein Standort: Frohnleiten</h2>
         <p>Ein Blick auf meine schöne Heimatstadt(meine zweite Heimat):</p>
-        <img
-          src="pictures/frohnleiten_1.jpg"
-          alt="Frohnleiten Panorama"
-          class="stadtbild"
-        />
+        <img  src="pictures/frohnleiten_1.jpg" alt="Frohnleiten Panorama" class="stadtbild"/>
       </section>
 
       <!-- Abschnitt für das Bilder-Karussell -->
@@ -169,8 +139,8 @@ Wählen den Reiter: „Karte einbetten“. Dort ist ein iframe, das so aussieht:
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.751403148684!2d15.333964615617668!3d47.27617057916192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e77e58c68b747%3A0x7a5c3f42000d4e29!2sHauptplatz%203%2C%208130%20Frohnleiten!5e0!3m2!1sde!2sat!4v1717227300000!5m2!1sde!2sat"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen=""
-          ></iframe>
+            allowfullscreen="">
+          </iframe>
         </div>
       </section>
 
@@ -178,11 +148,10 @@ Wählen den Reiter: „Karte einbetten“. Dort ist ein iframe, das so aussieht:
       <!-- Wenn du eine PDF hochlädst z. B. visitenkarte.pdf -->
       <section class="dokument-aktionen">
         <a href="dokumente/kontaktinfo.pdf" class="pdf-button" target="_blank"
-          >📄 Kontakt-PDF herunterladen</a
-        >
+          >📄 Kontakt-PDF herunterladen</a>
       </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>

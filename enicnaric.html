@@ -4,25 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENIC NARIC Austria – Anerkennung</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style_unterlagen.css" />
-
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style_unterlagen.css" />
+    <link rel="stylesheet" href="styles/style_footer.css" />
+    <link rel="stylesheet" href="styles/style_header.css" />
 </head>
 <body>
-  <header>
-    <h1>ENIC NARIC Austria – Anerkennung</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cv.html">Lebenslauf</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="unterlagen.html" class="nav-link active">Unterlagen</a>
-      <a href="kontakt.html">Kontakt</a>
-    </nav>
-  </header>
-
+      <h2>Anerkennung durch ENIC NARIC Austria</h2>
+      <!-- Hier wird header geladen: -->
+      <div id="header-placeholder"></div>
   <main class="dokument-seite">
     <section class="dokument-info">
-      <h2>Anerkennung durch ENIC NARIC Austria</h2>
+
       <p>
         Die Anerkennung meiner akademischen Abschlüsse erfolgte durch ENIC NARIC Austria. Diese Stelle ist zuständig für die Bewertung und Anerkennung ausländischer Bildungsnachweise in Österreich.
       </p>
@@ -58,16 +51,7 @@
       <embed src="dokumente/enicnaric.pdf" type="application/pdf" width="100%" height="600px" />
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
-    <p>
-      📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br>
-      ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
-    </p>
-  </footer>
-
-<script>
+<!-- <script>
    const images = document.querySelectorAll('.carousel-images img');
   const prevBtn = document.querySelector('.carousel-button.prev');
   const nextBtn = document.querySelector('.carousel-button.next');
@@ -90,8 +74,9 @@
   });
 
   updateCarousel(); // Initial anzeigen
-  </script>
+  </script> -->
+
+<script src="script.js" defer></script>
   
 </body>
-
 </html>

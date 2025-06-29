@@ -4,22 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anna Bacanau – Lebenslauf</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style_cv.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style_cv.css" />
+    <link rel="stylesheet" href="styles/style_footer.css" />
+    <link rel="stylesheet" href="styles/style_header.css" />
   </head>
   <body>
-      <h1>Lebenslauf</h1>
-    <!-- <header>
-      <h1>Lebenslauf</h1>
-      <nav>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="cv.html" class="nav-link active">Lebenslauf</a>
-        <a href="projekte.html" class="nav-link">Projekte</a>
-        <a href="unterlagen.html" class="nav-link">Meine Unterlagen</a>
-        <a href="kontakt.html" class="nav-link">Kontakt</a>
-      </nav>
-    </header> -->
-
+    <h1>Lebenslauf</h1>
     <!-- Header wird mit JS Funktion aufgeladen -->
     <div id="header-placeholder"></div>
 
@@ -49,23 +40,18 @@
             />
           </div>
 
-
           <div
-            style="
-              margin-top: 1rem;
+            style="margin-top: 1rem;
               font-family: Arial, sans-serif;
               font-size: 14px;
-              color: #333;
-            "
-          >
+              color: #333;">
             <br />
             <p>
               <strong>📧</strong>
               <a
                 href="mailto:anna.bacanau@gmail.com"
                 style="color: #333; text-decoration: none"
-                >anna.bacanau@gmail.com</a
-              >
+                >anna.bacanau@gmail.com</a>
             </p>
             <p>
               <strong>📞</strong>
@@ -78,19 +64,12 @@
             <p><strong>📍</strong> Frohnleiten, Österreich</p>
             <p>
               <strong>🌐</strong>
-              <a
-                href="https://baciitgirl.github.io/MySite/index.html"
-                target="_blank"
-                style="color: #333; text-decoration: none"
-                >baciitgirl.github.io/MySite</a
-              >
+              <a href="https://baciitgirl.github.io/MySite/index.html" target="_blank" style="color: #333; text-decoration: none">baciitgirl.github.io/MySite</a>
             </p>
           </div>
         </div>
 
-        <div
-          style="
-            max-width: 600px;
+        <div style="max-width: 600px;
             margin-left: 40px;
             margin-right: auto;
             text-align: justify;
@@ -127,12 +106,7 @@
 
         <div class="resume-entry">
           <strong>Junior Software Entwicklerin</strong><br />
-          <em
-            >04/2023 – 11/2024,
-            <a href="https://www.sol-it.at" target="_blank"
-              >SOL-IT GmbH, Graz</a
-            ></em
-          >
+          <em>04/2023 – 11/2024,<a href="https://www.sol-it.at" target="_blank">SOL-IT GmbH, Graz</a></em>
           <p>
             Unterstützung bei der Entwicklung, Implementierung und Testung von
             Softwarelösungen. Dokumentation der Prozesse.
@@ -340,20 +314,12 @@
 
     <!-- Button außerhalb von main -->
     <div style="text-align: center; margin-top: 2rem">
-      <button onclick="generatePDF()" class="pdf-button"> Lebenslauf als PDF herunterladen </button>
+      <button onclick="generatePDF()" class="pdf-button">
+        Lebenslauf als PDF herunterladen
+      </button>
     </div>
-
-    <!-- <footer>
-      footer placeholder
-      <p>&copy; 2025 Anna Bacanau. Alle Rechte vorbehalten.</p>
-      <p>
-        📞 <a href="tel:+436801516688">+43 680 151 66 88</a><br />
-        ✉️ <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
-      </p>
-    </footer> -->
 
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> -->
   </body>
 </html>

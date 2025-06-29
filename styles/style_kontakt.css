@@ -1,5 +1,16 @@
+/* 
+  Diese Datei (style_kontakt.css) enthält spezifische CSS-Regeln 
+  für die Gestaltung der Seite "kontakt.html" (Kontaktformular-Seite).
 
-/* Kontaktseite spezifisch*/
+  Hier werden z. B. das Layout des Formulars, 
+  Eingabefelder, Schaltflächen sowie responsive Verhalten gestylt.
+
+  Allgemeine Styles (z. B. Schrift, Grundfarben, Reset) 
+  befinden sich in der globalen Datei "style.css".
+
+  Alle CSS-Dateien sind zentral im Ordner "styles" gespeichert.
+*/
+
 
 body.kontakt {
   font-family: Arial, sans-serif;
@@ -8,49 +19,49 @@ body.kontakt {
   text-align: center;
 }
 
-/* body.kontakt h1 {
-  margin-bottom: 1em;
-} */
-
-
-/* .qr-section {
-  margin: 2em 0;
-}
-
-.qr-code {
-  display: inline-block;
-  padding: 1em;
-  background: white;
-  border-radius: 1em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
-
 .qr-container {
   display: flex;
   gap: 20px; /* Abstand zwischen den Blöcken */
-  justify-content: start; /* oder 'center' für zentrierte Darstellung */
+  justify-content: center; /* oder 'center' für zentrierte Darstellung */
   flex-wrap: wrap; /* optional, damit es bei kleinen Bildschirmen umbrechen kann */
 }
 
 .qr-section {
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 200px; /* oder eine andere feste Breite */
+  border: 1px solid #ddd;
+  padding: 1em;
+  width: 220px;
   text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
+
 
 .qr-code {
   width: 150px;
   height: 150px;
-  background-color: #f0f0f0; /* nur als Platzhalter für QR-Code */
   margin: 10px auto 0;
+  padding: 0.5em;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .qr-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qr-section {
+    width: 80%;
+  }
 }
 
 
 
-
-
-/* Für die Sektion "Kontaktdaten" */
 /* === Kontaktkarte mit Barrierefreiheit === */
 /* ========================================
    Kontaktkarte – modern, barrierefrei, responsiv
@@ -117,10 +128,6 @@ body.kontakt {
 }
 
 
-
-
-
-
 /* Kontaktformular */
 .kontaktformular {
   background-color: #f9f9fc; /* sanftes Grau-Blau als Hintergrund */
@@ -161,14 +168,6 @@ body.kontakt {
   font-weight: 600;
   color: #333;
 }
-
-/* .kontaktformular .button-group {
-  display: flex;
-  gap: 1em;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-} */
-
 
 .kontaktformular .button-group {
   display: flex;
@@ -246,7 +245,6 @@ body.kontakt {
 }
 
 
-
 /* Für Fotos (direkt)*/
 
 .stadtbild {
@@ -308,8 +306,6 @@ body.kontakt {
   height: auto;
   border-radius: 1rem;
 }
-
-
 
 .carousel-images {
   display: flex;
