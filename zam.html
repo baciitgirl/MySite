@@ -5,21 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Duale Ausbildung – zam Steiermark</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style_unterlagen.css" />
+    <link rel="stylesheet" href="styles/style_lernprojekte.css" />
+    <link rel="stylesheet" href="styles/style_projekte.css" />
     <link rel="stylesheet" href="styles/style_footer.css" />
     <link rel="stylesheet" href="styles/style_header.css" />
 </head>
 <body>
-   <main class="dokument-seite">
-    <section class="dokument-info">
-      <h2>Kontakt & Ansprechpartnerin</h2>
-      <p><strong>Mag.a Verena Gettinger</strong><br> Neutorgasse 53<br>
-        8010 Graz, AUSTRIA<br>
-        T: +43 316 812 600 407<br>
-        M: +43 664 887 19158<br>
-        E: <a href="mailto:verena.gettinger@zam-steiermark.at">verena.gettinger@zam-steiermark.at</a><br>
-        <a href="https://www.zam-steiermark.at" target="_blank">www.zam-steiermark.at</a>
-      </p>
-    </section>
+   <!-- Hier wird header geladen: -->
+  <div id="header-placeholder"></div>
+  <main class="dokument-seite">
+  <h2>Duale Ausbildung</h2>
+  <section class="kontaktkarte">
+    <h2>Kontakt & Ansprechpartnerin</h2>
+    <ul>
+      <li><span class="icon">👩‍💼</span> Mag.a Verena Gettinger</li>
+      <li><span class="icon">🏢</span> Neutorgasse 53, 8010 Graz, AUSTRIA</li>
+      <li><span class="icon">📞</span> T: +43 316 812 600 407</li>
+      <li><span class="icon">📱</span> M: +43 664 887 19158</li>
+      <li><span class="icon">✉️</span> <a href="mailto:verena.gettinger@zam-steiermark.at">verena.gettinger@zam-steiermark.at</a></li>
+      <li><span class="icon">🌐</span> <a href="https://www.zam-steiermark.at" target="_blank">www.zam-steiermark.at</a></li>
+    </ul>
+  </section>
 
     <section>
       <h2>Ziel & Hintergrund</h2>
@@ -28,7 +35,7 @@
 
     <section>
       <h2>Ausbildungsstruktur</h2>
-      <ul>
+      <ul class="projekt-liste">
         <li><strong>IT-Labor:</strong> 03.02.2025 – 28.02.2025</li>
         <li><strong>Grundausbildung:</strong> 03.03.2025 – 07.09.2025</li>
         <li><strong>Duale Ausbildung:</strong> 08.09.2025 – 31.10.2026 (2. & 3. Semester der FH berufsbegleitend)</li>
@@ -38,7 +45,7 @@
 
     <section>
       <h2>Geplante Praktikumszeiten</h2>
-      <ul>
+      <ul class="projekt-liste">
         <li>KW19: 05.05. – 09.05.2025</li>
         <li>KW24: 10.06. – 13.06.2025</li>
         <li>KW27: 30.06. – 04.07.2025</li>
@@ -48,35 +55,46 @@
 
     <section>
       <h2>Theoretische Inhalte</h2>
-      <ul>
-        <li>Objektorientierte Programmierung (Java, .NET/C#)</li>
-        <li>Datenmodellierung und SQL</li>
-        <li>Webentwicklung, Mobile Lösungen</li>
-        <li>Softwarearchitektur & Softwaretechnologien</li>
-        <li>Softwareanalyse, agile Methoden, Engineering</li>
-        <li>Interaktive Systeme & Servicebasierte Systeme</li>
-        <li>Markup Languages, Software Quality Assurance</li>
-      </ul>
+      <ul class="tech-liste">
+      <li><span class="icon">👩‍💻</span> Objektorientierte Programmierung (Java, .NET/C#)</li>
+      <li><span class="icon">🗄️</span> Datenmodellierung und SQL</li>
+      <li><span class="icon">🌐</span> Webentwicklung, Mobile Lösungen</li>
+      <li><span class="icon">🏗️</span> Softwarearchitektur & Softwaretechnologien</li>
+      <li><span class="icon">🧠</span> Softwareanalyse, agile Methoden, Engineering</li>
+      <li><span class="icon">🖥️</span> Interaktive Systeme & Servicebasierte Systeme</li>
+      <li><span class="icon">🔖</span> Markup Languages, Software Quality Assurance</li>
+    </ul>
     </section>
 
     <section>
       <h2>Praktische Inhalte</h2>
-      <ul>
-        <li>Kennenlernen innerbetrieblicher Abläufe</li>
-        <li>Vertiefung theoretischer Inhalte</li>
-        <li>Spezialisierung auf firmeninterne Anforderungen</li>
-      </ul>
+     <section>
+      <h2>Praktische Inhalte</h2>
+      <ul class="tech-liste">
+      <li><span class="icon">🏢</span> Kennenlernen innerbetrieblicher Abläufe</li>
+      <li><span class="icon">📘</span> Vertiefung theoretischer Inhalte</li>
+      <li><span class="icon">🎯</span> Spezialisierung auf firmeninterne Anforderungen</li>
+     </ul>
+    </section>
+
     </section>
 
     <section>
       <h2>Finanzierung & Kosten</h2>
-      <ul>
-        <li>IT-Labor & Grundausbildung: 100 % gefördert durch AMS</li>
-        <li>Duale Ausbildung: <br>
-          – Startbeitrag € 450,- (exkl. USt)<br>
-          – Monatsbeitrag € 350,- (exkl. USt)<br>
-          – 50 % der Kosten (max. € 2000,-) übernimmt das AMS</li>
-      </ul>
+   <ul class="tech-liste">
+  <li>
+    <span class="icon">💰</span>
+    IT-Labor & Grundausbildung: 100 % gefördert durch AMS
+  </li>
+  <li>
+    <span class="icon">📄</span>
+    Duale Ausbildung:<br>
+    – Startbeitrag € 450,- (exkl. USt)<br>
+    – Monatsbeitrag € 350,- (exkl. USt)<br>
+    – 50 % der Kosten (max. € 2000,-) übernimmt das AMS
+  </li>
+</ul>
+
       <p>Während der gesamten Ausbildung sind Teilnehmerinnen über das AMS versichert und erhalten einen Schulungszuschlag.</p>
     </section>
     <section class="dokument-aktionen">

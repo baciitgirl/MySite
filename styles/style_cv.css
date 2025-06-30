@@ -15,10 +15,22 @@
 
 /* Für die Kontaktzeile */
 
+.intro-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
 h2 {
   border-bottom: 2px solid #4169e1;
   padding-bottom: 0.5rem;
   color: #2c3e91;
+}
+
+.kontakt-spalte {
+  flex-shrink: 0;
+  text-align: left;
 }
 
 .kontakt-info {
@@ -27,6 +39,7 @@ h2 {
   font-size: 14px;
   color: #333;
 }
+
 
 .kontakt-info a {
   color: #333;
@@ -37,6 +50,13 @@ h2 {
   text-decoration: underline;
 }
 
+.ueber-mich {
+  max-width: 600px;
+  margin-left: 40px;
+  margin-right: auto;
+  text-align: justify;
+  line-height: 1.6;
+}
 
 /* Lebeslauf: Einträge */
 
@@ -74,6 +94,18 @@ ul {
   margin-bottom: 6px;
 }
 
+
+.skills-section {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.skills-block {
+  min-width: 200px;
+}
+
+
 .label {
   width: 100px; /* feste Breite für Ausrichtung */
   font-weight: 500;
@@ -94,3 +126,28 @@ ul {
 .star.filled {
   background-color: #0366d6;
 }
+
+
+@media print {
+  .profilbild img.hover {
+    display: none !important;
+  }
+  .profilbild img.normal {
+    display: block !important;
+    position: static !important;
+  }
+
+  main section:first-of-type {
+    gap: 1rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  body {
+    font-size: 13.2px;
+    line-height: 1.45;
+  }
+  
+  
+}
+
+

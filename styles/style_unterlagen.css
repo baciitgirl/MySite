@@ -132,3 +132,51 @@ h2 {
     align-items: center;
   }
 }
+
+/* Für die Seite zam.html */
+/* Kontakte */
+.kontaktkarte {
+  background-color: #f5f9ff;
+  border-left: 6px solid #2c3e91;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.kontaktkarte h2 {
+  margin-top: 0;
+  color: #2c3e91;
+}
+
+.kontaktkarte ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.kontaktkarte li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.kontaktkarte .icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.kontaktkarte a {
+  color: #2c3e91;
+  text-decoration: none;
+}
+
+.kontaktkarte a:hover {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,61 @@
+/*** Gestaltung für Projektliste/lernprojekte.html (moderne Listen ohne Bullets) ***/
+
+.projekt-liste {
+  list-style: none;                /* Standard-Bulletpoints entfernen */
+  padding-left: 0;                 /* Kein Einzug von links */
+  margin-top: 1rem;                /* Abstand nach oben */
+  display: flex;                   /* Flexbox für gleichmäßige Verteilung */
+  flex-direction: column;         /* Elemente untereinander anordnen */
+  gap: 1rem;                       /* Abstand zwischen den Listenelementen */
+}
+
+.projekt-liste li {
+  background-color: #e9f0ff;       /* Hellblauer Hintergrund für jedes Listenelement */
+  border-left: 4px solid #4169e1;  /* Linker Rahmen zur optischen Trennung */
+  padding: 1rem;                   /* Innenabstand */
+  border-radius: 8px;              /* Abgerundete Ecken */
+  font-size: 1rem;                 /* Einheitliche Schriftgröße */
+  transition: background-color 0.3s ease; /* Weicher Hover-Effekt */
+}
+
+.projekt-liste li:hover {
+  background-color: #dce6ff;       /* Hintergrundfarbe beim Überfahren mit der Maus */
+}
+
+.projekt-liste a {
+  text-decoration: none;          /* Keine Unterstreichung der Links */
+  color: #2c3e91;                 /* Dunkelblauer Text */
+  font-weight: 500;               /* Etwas fetter für bessere Lesbarkeit */
+}
+
+.projekt-liste a:hover {
+  text-decoration: underline;     /* Unterstreichung beim Hover für Interaktivität */
+}
+
+
+/* === Gestaltung für Technologie-Liste mit Icons === */
+
+.tech-liste {
+  list-style: none;               /* Keine Bulletpoints */
+  padding-left: 0;                /* Kein Einzug von links */
+  margin-top: 1rem;               /* Abstand nach oben */
+  display: flex;                  /* Flexbox-Layout */
+  flex-direction: column;        /* Vertikale Anordnung */
+  gap: 0.8rem;                    /* Kleiner Abstand zwischen Items */
+}
+
+.tech-liste li {
+  background-color: #eef2ff;      /* Heller Hintergrund für Technik-Elemente */
+  border-left: 4px solid #4169e1; /* Blauer Akzent links */
+  padding: 0.75rem 1rem;          /* Innenabstand (oben/unten, rechts/links) */
+  border-radius: 6px;             /* Abgerundete Ecken */
+  font-size: 1rem;                /* Einheitliche Schriftgröße */
+  display: flex;                  /* Für Icon + Text nebeneinander */
+  align-items: center;           /* Vertikale Ausrichtung */
+  gap: 0.5rem;                    /* Abstand zwischen Icon und Text */
+}
+
+.tech-liste .icon {
+  font-size: 1.2rem;              /* Größere Schrift für Emoji/Icon */
+  flex-shrink: 0;                 /* Verhindert, dass das Icon schrumpft */
+}

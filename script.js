@@ -182,15 +182,16 @@ fetch("https://api.github.com/users/baciitgirl/repos")
 function generatePDF() {
   const element = document.getElementById('lebenslauf-inhalt');
   const options = {
-    margin: 0.5,
+    margin: 0.3, // kompakter Rand
     filename: 'lebenslauf-anna-bacanau.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, scrollY: 0 },
+    html2canvas: { scale: 3, scrollY: 0 }, // höhere Auflösung
     jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
     pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
   };
   html2pdf().set(options).from(element).save();
 }
+
 
 // ==========================
 // SLIDESHOW
@@ -217,6 +218,11 @@ function initSlideShow() {
     slides[slideIndex - 1].style.display = "block";
   }
 }
+// Aufruf der Funktion
+document.addEventListener("DOMContentLoaded", function () {
+  initSlideShow();
+});
+
 
 // ==========================
 // DATEIUPLOAD (Kontaktformular)

@@ -5,59 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lernprojekte – Anna Bacanau</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style_lernprojekte.css" />
     <link rel="stylesheet" href="styles/style_footer.css" />
     <link rel="stylesheet" href="styles/style_header.css" />
   </head>
   <body>
-    <header>
-      <h1>Lernprojekte</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="cv.html">Lebenslauf</a>
-        <a href="projekte.html">Projekte</a>
-        <a href="unterlagen.html">Unterlagen</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-    </header>
-
+   <!-- Hier wird header geladen: -->
+    <div id="header-placeholder"></div>
     <main class="dokument-seite">
       <section class="dokument-info">
-        <h2>Technologien & Tools</h2>
-        <p>Ich arbeite regelmäßig mit folgenden Technologien:</p>
-        <ul>
-          <li>Sprachen: Java, C#, HTML/CSS, JavaScript, SQL</li>
-          <li>Tools: Git, GitHub, Visual Studio Code, IntelliJ, Figma</li>
-          <li>Frameworks: ASP.NET, Spring Boot (in Ausbildung)</li>
+      <h2>Technologien & Tools</h2>
+      <p>Ich arbeite regelmäßig mit folgenden Technologien:</p>
+      <ul class="tech-liste">
+        <li><span class="icon">💻</span> Sprachen: Java, C#, HTML/CSS, JavaScript, SQL</li>
+        <li><span class="icon">🛠️</span> Tools: Git, GitHub, Visual Studio Code, IntelliJ, Figma</li>
+        <li><span class="icon">📦</span> Frameworks: ASP.NET, Spring Boot (in Ausbildung)</li>
+      </ul>
+    </section>
+      <section class="dokument-info">
+        <h2>Lernprojekte</h2>
+        <ul class="projekt-liste">
+          <li>
+            ✔️
+            <a href="banking.html" class="modern-link">
+              Objektorientiertes Banking-System in Java (inkl. Tests)
+            </a>
+          </li>
+          <li>
+            ✔️
+            <a href="formularseite.html" class="modern-link">
+              Mini-Website mit Formularvalidierung (HTML/CSS/JavaScript)
+            </a>
+          </li>
+          <li>
+            ✔️
+            <a href="mitarbeiterverwaltung.html" class="modern-link">
+              C# Konsolenprojekt zur Mitarbeiterverwaltung mit .NET
+            </a>
+          </li>
         </ul>
       </section>
 
-      <section class="dokument-info">
-        <h2>Lernprojekte</h2>
-        <ul>
-          <li>
-            ✔️
-            <a.modern-link href="banking.html"
-              >Objektorientiertes Banking-System in Java (inkl. Tests)</a
-            >
-          </li>
-          <li>
-            ✔️
-            <a.modern-link href="formularseite.html"
-              >Mini-Website mit Formularvalidierung (HTML/CSS/JavaScript)</a
-            >
-          </li>
-          <li>
-            ✔️
-            <a.modern-link href="mitarbeiterverwaltung.html"
-              >C# Konsolenprojekt zur Mitarbeiterverwaltung mit .NET</a
-            >
-          </li>
-        </ul>
-      </section>
       <section
-        class="dokument-aktionen"
-        style="text-align: center; margin-top: 2rem"
-      >
+        class="dokument-aktionen">
         <a href="projekte.html" class="pdf-button">🔙 Zur Projektseite</a>
       </section>
     </main>

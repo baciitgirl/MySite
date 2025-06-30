@@ -15,67 +15,35 @@
     <div id="header-placeholder"></div>
 
     <main id="lebenslauf-inhalt">
-      <section
-        style="
-          display: flex;
-          align-items: flex-start;
-          gap: 2rem;
-          margin-bottom: 2rem;
-        "
-      >
+     <section class="intro-section">
         <!-- Beim Überfahren des Bildes mit der Maus (Hover-Effekt)  über das erste Bild wird ein zweites Bild eingeblendet -->
-
-        <div style="flex-shrink: 0; text-align: left">
-          <!-- <img src="anna.jpg" alt="Anna Bacanau" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #999;"> -->
+          <div class="kontakt-spalte">
           <div class="profilbild">
-            <img
-              src="pictures/foto_anna.jpg"
-              alt="Anna Bacanau"
-              class="normal"
-            />
-            <img
-              src="pictures/foto_anna_back.jpg"
-              alt="Anna Bacanau 2"
-              class="hover"
-            />
+            <img src="pictures/foto_anna.jpg" alt="Anna Bacanau" class="normal"/>
+            <img src="pictures/foto_anna_back.jpg" alt="Anna Bacanau 2" class="hover"/>
           </div>
 
-          <div
-            style="margin-top: 1rem;
-              font-family: Arial, sans-serif;
-              font-size: 14px;
-              color: #333;">
+          <div class="kontakt-info">
             <br />
             <p>
               <strong>📧</strong>
-              <a
-                href="mailto:anna.bacanau@gmail.com"
-                style="color: #333; text-decoration: none"
-                >anna.bacanau@gmail.com</a>
+              <a href="mailto:anna.bacanau@gmail.com">anna.bacanau@gmail.com</a>
             </p>
             <p>
               <strong>📞</strong>
-              <a
-                href="tel:+436801516688"
-                style="color: #333; text-decoration: none"
-                >+43 680 151 66 88</a
-              >
+              <a href="tel:+436801516688">+43 680 151 66 88</a>
             </p>
             <p><strong>📍</strong> Frohnleiten, Österreich</p>
             <p>
               <strong>🌐</strong>
-              <a href="https://baciitgirl.github.io/MySite/index.html" target="_blank" style="color: #333; text-decoration: none">baciitgirl.github.io/MySite</a>
+              <a href="https://baciitgirl.github.io/MySite/index.html" target="_blank">baciitgirl.github.io/MySite</a>
             </p>
           </div>
         </div>
 
-        <div style="max-width: 600px;
-            margin-left: 40px;
-            margin-right: auto;
-            text-align: justify;
-            line-height: 1.6;
-          "
-        >
+          <div class="ueber-mich">
+          <h2>Anna Bacanau</h2>
+
           <h2>Über mich</h2>
           <p>
             Ich bin eine motivierte und zielorientierte Person mit starkem
@@ -103,7 +71,6 @@
 
       <section>
         <h2>Berufserfahrung</h2>
-
         <div class="resume-entry">
           <strong>Junior Software Entwicklerin</strong><br />
           <em>04/2023 – 11/2024,<a href="https://www.sol-it.at" target="_blank">SOL-IT GmbH, Graz</a></em>
@@ -155,29 +122,17 @@
 
         <div class="resume-entry">
           <strong>Akademisch geprüfte Softwareentwicklerin</strong><br />
-          <em
-            >03/2025 – 10/2026,
-            <a href="https://www.campus02.at" target="_blank"
-              >FH Campus 02</a
-            ></em
-          >
+          <em>03/2025 – 10/2026,<a href="https://www.campus02.at" target="_blank">FH Campus 02</a></em>
         </div>
 
         <div class="resume-entry">
           <strong>Kurs: Programmieren C#</strong><br />
-          <em
-            >09/2022 – 04/2023,<a href="https://edvgraz.at" target="_blank">
-              EDV Graz GmbH</a
-            ></em
-          >
+          <em>09/2022 – 04/2023,<a href="https://edvgraz.at" target="_blank">EDV Graz GmbH</a></em>
         </div>
 
         <div class="resume-entry">
           <strong>Lehre Applikationsentwicklung – Coding</strong><br />
-          <em
-            >01/2019 – 03/2022,
-            <a href="https://www.bfi.at" target="_blank">BFI Leoben</a></em
-          >
+          <em>01/2019 – 03/2022,<a href="https://www.bfi.at" target="_blank">BFI Leoben</a></em>
           <p>
             Webentwicklung, Netzwerke, Datenbanken, Datenschutz, Python,
             JavaScript, PHP. Abschluss: LAP Softwareentwicklerin
@@ -195,9 +150,9 @@
         </div>
       </section>
 
-      <section style="display: flex; gap: 3rem; align-items: flex-start">
+        <section class="skills-section">
         <!-- Skills (grafisch) -->
-        <div style="min-width: 200px">
+        <div class="skills-block">
           <h2>Skills (Bewertung)</h2>
           <ul class="skills-rating">
             <li>
@@ -313,7 +268,7 @@
     </main>
 
     <!-- Button außerhalb von main -->
-    <div style="text-align: center; margin-top: 2rem">
+      <div class="pdf-download">
       <button onclick="generatePDF()" class="pdf-button">
         Lebenslauf als PDF herunterladen
       </button>

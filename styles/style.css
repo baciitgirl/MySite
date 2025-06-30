@@ -144,10 +144,27 @@ main {
   display: inline-block;
   transition: background-color 0.3s ease;
 }
-
 .pdf-button:hover {
   background-color: #5a79e3;
 }
+.pdf-download {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.bildreihe {
+  margin-bottom: 1rem;
+}
+
+.dokument-vorschau {
+  margin-bottom: 2rem;
+}
+
+.dokument-aktionen {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
 
 
 /*******RESPONSIVE DESIGN ***********/
@@ -182,6 +199,17 @@ main {
     max-width: 100%;
     height: auto;
   }
+  .dokument-vorschau {
+  margin-bottom: 2rem; /* Abstand unterhalb des Bildabschnitts */
+  }
+  .dokument-aktionen {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.bildreihe {
+  margin-bottom: 1rem; /* Optionaler Abstand zwischen Bild und evtl. folgendem Element */
+}
 
   .kontaktformular {
     padding: 1em;
